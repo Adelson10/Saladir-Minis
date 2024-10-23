@@ -1,0 +1,43 @@
+header {
+    width: 100%;
+    padding-top: 2rem;
+}
+
+nav {
+    width: 840px;
+    border-radius: 3rem;
+    border: 1px solid hsl(0, 0%, 20%);
+
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    background: hsla(188, 100%, 3%, 0.5);
+    padding: .5rem 1rem;
+    font-family: var(--font-primary);
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul > li {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+nav ul > li:hover,
+nav ul > li:hover > svg {
+    color: var(--color-three);
+}
+
+.header-logo-storie {
+    margin: 0 auto;
+}
+
+.header-logo-storie svg{
+    height: 60px;
+    width: 55px;
+}

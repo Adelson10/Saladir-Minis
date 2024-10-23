@@ -1,0 +1,27 @@
+.home-container {
+    width: 100%;
+    height: calc(100vh + 100px);
+    background-image: var(--degrade-primary),
+    var(--degrade-secundary),
+    url('../../assets/bg/bg-home.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.anuncio-title-container {
+    font-family: var(--font-secundary);
+}
+
+.anuncio-title-container h1 {
+    margin: 0;
+    font-size: 4rem;
+}
+
+.anuncio-title-container h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-secundary);
+    letter-spacing: 6px;
+    transform: translateY(-32px);
+}
