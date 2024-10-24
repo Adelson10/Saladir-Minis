@@ -7,21 +7,94 @@
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.anuncio-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.anuncio-subtitle-container {
+    font-family: var(--font-primary);
+    font-size: .9rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.anuncio-subtitle-container h3 {
+    margin: 0;
+    text-align: center;
 }
 
 .anuncio-title-container {
-    font-family: var(--font-secundary);
+    font-family: var(--font-secundary);    
+    text-align: center;
 }
 
 .anuncio-title-container h1 {
     margin: 0;
-    font-size: 4rem;
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    line-height: 4rem;
+
+    background: url('../../assets/utils/dist.png');
+    background-clip: text;
+    color: white;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 2;
 }
+
+.anuncio-title-container h1::before {
+    content: 'Lançamento em Janeiro de 2025';
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    z-index: 1;
+    color: black;
+} 
 
 .anuncio-title-container h2 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: var(--color-secundary);
-    letter-spacing: 6px;
-    transform: translateY(-32px);
+    letter-spacing: 9px;
+    line-height: 2rem;
+}
+
+.anuncio-subtitle-email-label {
+    display: flex;
+    box-sizing: content-box;
+    padding: .5rem .5rem .5rem 1rem;
+    border-radius: 20px;
+    background: var(--color-primary);
+}
+
+.anuncio-subtitle-email-label input {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+}
+
+.anuncio-subtitle-email-button {
+    border-radius: 1rem;
+    border: none;
+    background: var(--color-three);
+
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    padding: .2rem .5rem;
 }
