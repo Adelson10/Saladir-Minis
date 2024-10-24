@@ -45,7 +45,7 @@ ul {
 .home-title {
   font-family: var(--font-three);
   font-size: 1.8rem;
-  background: linear-gradient(#00C5D3, #9AF8FF);
+  background: linear-gradient(to right, #00C5D3, #9AF8FF);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 1rem 0;

@@ -123,6 +123,7 @@
     backdrop-filter: blur(6px);
     background: hsla(188, 100%, 3%, 0.7);
     box-shadow: 0px 0px 9px 0px hwb(0 100% 0% / 0.03) ;
+    transform: translateY(-70px);
 }
 
 .container-description-bg {
@@ -147,19 +148,21 @@
 .container-description-bg svg {
     position: absolute;
     transform: translateY(-50px);
-    filter: drop-shadow(0px 0px 8px #007486c9);
+    filter: drop-shadow(0px 0px 8px #00000065);
 }
 
 .container-description-text {
     transform: translateY(-200px);
     max-width: 500px;
     margin: 0 auto;
+    margin-bottom: -150px;
 }
 
 .container-description-container p {
     font-family: var(--font-primary);
     text-indent: 2rem;
-    margin: 0 .5rem;
+    margin: .5rem 0;
+    text-align: justify;
 }
 
 .container-description-container p.primeiro {
@@ -173,4 +176,29 @@
     margin-right: .5rem;
     float: left;
     color: var(--color-three);
+    margin-top: .6rem;
+    line-height: 2rem;
+}
+
+.container-description-border {
+    height: 3rem;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    align-items: center;
+    color: white;
+    margin-top: 3rem;
+}
+
+.container-description-border-logo {
+    margin: 0 1rem;
+}
+
+.container-description-border-sides {
+    background: url('../../assets/utils/borda.png');
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-position: center center;
 }
