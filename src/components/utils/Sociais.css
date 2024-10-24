@@ -1,0 +1,10 @@
+.Sociais {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    margin: 0;
+}
+
+.Sociais li a > svg {
+    color: var(--color-primary);
+}
