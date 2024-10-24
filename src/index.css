@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/enchanted-land');
 
 * {
   --font-primary: "Inika", serif;
   --font-secundary: 'Enchanted Land', sans-serif;
+  --font-three: "Inter", sans-serif;
   --color-bg: #000D0F;
   --color-primary: white;
   --color-secundary: #00EEFF;
@@ -39,4 +40,15 @@ a {
 ul {
   list-style: none;
   padding: 0;
+}
+
+.home-title {
+  font-family: var(--font-three);
+  font-size: 1.8rem;
+  background: linear-gradient(#00C5D3, #9AF8FF);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  text-align: center;
 }

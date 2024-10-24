@@ -150,7 +150,27 @@
     filter: drop-shadow(0px 0px 8px #007486c9);
 }
 
-.container-description-container p {
+.container-description-text {
+    transform: translateY(-200px);
     max-width: 500px;
     margin: 0 auto;
+}
+
+.container-description-container p {
+    font-family: var(--font-primary);
+    text-indent: 2rem;
+    margin: 0 .5rem;
+}
+
+.container-description-container p.primeiro {
+    text-indent: 0;
+}
+
+
+.container-description-container p.primeiro::first-letter {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-right: .5rem;
+    float: left;
+    color: var(--color-three);
 }

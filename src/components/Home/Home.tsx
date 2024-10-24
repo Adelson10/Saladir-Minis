@@ -26,11 +26,16 @@ const Home = () => {
         <div className="container-description-bg">
           <LogoStormBringers />
         </div>
-          <p>Em um mundo onde os elementos dançam em sinfonia com as forças primordiais da natureza, os Storm Bringers emergem como guardiões e catalisadores de tempestades. Esses indivíduos extraordinários não são apenas manipuladores das forças climáticas; são também os escolhidos de um destino ancestral, com o poder de invocar relâmpagos e desvendar os segredos ocultos nas nuvens.
-As terras que habitam são repletas de mistérios e tradições, onde mitos antigos sussurram sobre a origem dos Storm Bringers e seu papel essencial no equilíbrio do mundo. Entre montanhas majestosas e mares revoltos, eles se confrontam com desafios que testam não apenas sua habilidade de controlar as tempestades, mas também sua coragem e lealdade.
-Neste universo vibrante, cada tempestade traz consigo um novo começo e um fim inesperado. A jornada dos Storm Bringers é marcada por alianças inusitadas, conflitos épicos e a incessante busca por um propósito maior. Ao desbravar os céus e enfrentar os elementos, eles descobrirão que seu verdadeiro poder vai além da manipulação das forças da natureza; está enraizado em sua conexão com o mundo e com aqueles que os rodeiam.
-Prepare-se para embarcar em uma aventura eletrizante, onde cada relâmpago ilumina a escuridão e cada tempestade carrega a promessa de mudanças radicais. O universo dos Storm Bringers está prestes a se revelar, e a tempestade está apenas começando.</p>
+          <div className='container-description-text'>
+            <h1 className='home-title'>o chamado da tempestade</h1>
+            <p className='primeiro'>Em um mundo onde os elementos dançam em sinfonia com as forças primordiais da natureza, os Storm Bringers emergem como guardiões e catalisadores de tempestades. Esses indivíduos extraordinários não são apenas manipuladores das forças climáticas; são também os escolhidos de um destino ancestral, com o poder de invocar relâmpagos e desvendar os segredos ocultos nas nuvens.</p>
+            <p>As terras que habitam são repletas de mistérios e tradições, onde mitos antigos sussurram sobre a origem dos Storm Bringers e seu papel essencial no equilíbrio do mundo. Entre montanhas majestosas e mares revoltos, eles se confrontam com desafios que testam não apenas sua habilidade de controlar as tempestades, mas também sua coragem e lealdade.</p>
+            <p>Neste universo vibrante, cada tempestade traz consigo um novo começo e um fim inesperado. A jornada dos Storm Bringers é marcada por alianças inusitadas, conflitos épicos e a incessante busca por um propósito maior. Ao desbravar os céus e enfrentar os elementos, eles descobrirão que seu verdadeiro poder vai além da manipulação das forças da natureza; está enraizado em sua conexão com o mundo e com aqueles que os rodeiam.</p>
+            <p>Prepare-se para embarcar em uma aventura eletrizante, onde cada relâmpago ilumina a escuridão e cada tempestade carrega a promessa de mudanças radicais. O universo dos Storm Bringers está prestes a se revelar, e a tempestade está apenas começando.</p>
+          </div>
+          
       </div>
+      
     </>
   )
 }
