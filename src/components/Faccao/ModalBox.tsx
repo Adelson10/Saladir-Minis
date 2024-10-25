@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import './ModalBox.css';
-import { CubeFocus } from '@phosphor-icons/react';
+import { CaretLeft, CaretRight, CubeFocus } from '@phosphor-icons/react';
 import LogoShockHounds from '../../assets/icons/LogoShockHounds';
 import ShieldIcon from '../../assets/icons/ShieldIcon';
 import BgModalBox from '../../assets/icons/BgModalBox';
@@ -10,68 +10,50 @@ import IconSV from '../../assets/icons/IconSV';
 import IconW from '../../assets/icons/IconW';
 import IconLD from '../../assets/icons/IconLD';
 import IconOC from '../../assets/icons/IconOC';
-import AvailableAction from '../../assets/icons/AvailableActions';
-
-interface PropsModalBox {
-    image: string;
-    name: string;
-    faction: string;
-    iconCompany: string;
-    statusPosition: string;
-    status: {
-        m: string;
-        t: string;
-        sv: string;
-        w: string;
-        ld: string;
-        oc: string;
-    };
-    tags: string[],
-    AvailableActions: AvailableActionsProps[]
-}
-
-interface AvailableActionsProps {
-    cp: string;
-    type: string;
-    icon: string;
-    title: string;
-}
+import AvailableAction from './AvailableActions';
 
 const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, AvailableActions }: PropsModalBox) => {
+    const imagem3d = React.useRef<HTMLDivElement>(null);
+    const Box = React.useRef<HTMLDivElement>(null);
+    const [activeImage3d, setActiveImage3d] = React.useState<boolean>(false);
+    const [currentClass, SetCurrentClass] = React.useState<string>('');
+
+    const [index, setIndex] = React.useState<number>(0);
+
+    function handleLeft() {
+        if(index > 0 ) setIndex(index - 1);
+        else setIndex(3);
+    }
+
+    function handleRight() {        
+        if(index < 3 ) setIndex(index + 1);
+        else setIndex(0);
+    }
 
     React.useEffect(() => {
-        const box = document.querySelector('.box');
-        const radioGroup = document.querySelector('.radio-group');
-        let currentClass = '';
-
-        function changeSide() {
-            if(radioGroup) {
-                const checkedRadio = radioGroup.querySelector<HTMLInputElement>(':checked');
-                if(checkedRadio) {
-                    const showClass = 'show-' + checkedRadio.value;
-                    if(box) {
-                        if ( currentClass) {
-                            box.classList.remove( currentClass );
-                        }
-                        box.classList.add( showClass );
-                    }
-                    currentClass = showClass;
-                }
-            }
+        const showClass = `show-${index}`;
+        
+        if ( currentClass ) {                            
+            Box.current!.classList.remove(currentClass);
         }
-        changeSide();
+        Box.current!.classList.add(showClass);
+        SetCurrentClass(showClass);
+    }, [index]);
 
-        radioGroup.addEventListener( 'change', changeSide );
-    }, []);
+    function handleClick(): void {
+       setActiveImage3d((active) => !active);
+    }
+
   return (
     <>
             <div className='modal-box-container'>
-                <div className="box">
+                <button className="modal-box-container-button" onClick={handleLeft}><CaretLeft size={'1.2rem'}/></button>
+                <div className="box" ref={Box}>
                     <div className="box-face box-face--front"></div>
                     <div className="box-face box-face--back">
                         <div className="box-face-image-char-container">
-                            <button className="box-face-image-active-3d"><CubeFocus /></button>
-                            <div className="box-face-image-char" style={{backgroundImage: image}}></div>
+                            <button className="box-face-image-active-3d" onClick={handleClick} style={{color: activeImage3d ? getComputedStyle(document.documentElement).getPropertyValue('--color-three') : 'white' }}><CubeFocus /></button>
+                            <div className="box-face-image-char" ref={imagem3d} style={{backgroundImage: image}}></div>
                             <div className="box-face-char-degrade-container">
                                 <div className="box-face-char-status-cotainer">
                                     <div className='box-face-char-title-container'>
@@ -94,12 +76,12 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
                                     </div>
                                     <div className='box-face-status-tags'>
                                         { tags && tags.map((tag) => 
-                                            <h5>{tag}</h5>
+                                            <h5 key={tag}>{tag}</h5>
                                         )}
                                     </div>
                                     <div className="box-face-status-available-actions">
-                                        {AvailableActions.map(({cp, icon, title, type}) => 
-                                            <AvailableAction cp={cp} icon={icon} title={title} type={type} />
+                                        {AvailableActions && AvailableActions.map(({cp, icon, title, type}) => 
+                                            <AvailableAction key={title} cp={cp} icon={icon} title={title} type={type} />
                                         )}
                                     </div>
                                 </div>
@@ -111,21 +93,8 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
                     <div className="box-face box-face--top"></div>
                     <div className="box-face box-face--bottom"></div>
                 </div>
+                <button className="modal-box-container-button" onClick={handleRight}><CaretRight size={'1.2rem'}/></button>
             </div>
-            <p className="radio-group">
-            <label>
-                <input type="radio" name="rotate-cube-side" value="0" /> front
-            </label>
-            <label>
-                <input type="radio" name="rotate-cube-side" value="1" /> right
-            </label>
-            <label>
-                <input type="radio" name="rotate-cube-side" value="2" /> back
-            </label>
-            <label>
-                <input type="radio" name="rotate-cube-side" value="3" /> left
-            </label>
-            </p>
     </>
   )
 }

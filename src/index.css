@@ -1,18 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/enchanted-land');
 
-* {
-  --font-primary: "Inika", serif;
-  --font-secundary: 'Enchanted Land', sans-serif;
-  --font-three: "Inter", sans-serif;
-  --color-bg: #000D0F;
-  --color-primary: #ffffff;
-  --color-secundary: #00EEFF;
-  --color-three: #FF7700;
-  --degrade-primary: linear-gradient(#000d0f00, #000D0F);
-  --degrade-secundary: radial-gradient(#000d0f00, #000D0F);
-}
-
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -25,6 +13,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --font-primary: "Inika", serif;
+  --font-secundary: 'Enchanted Land', sans-serif;
+  --font-three: "Inter", sans-serif;
+  --color-bg: #000D0F;
+  --color-primary: #ffffff;
+  --color-secundary: #00EEFF;
+  --color-three: #FF7700;
+  --degrade-primary: linear-gradient(#000d0f00, #000D0F);
+  --degrade-secundary: radial-gradient(#000d0f00, #000D0F);
 }
 
 body {
