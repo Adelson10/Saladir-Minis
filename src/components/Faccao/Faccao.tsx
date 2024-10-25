@@ -4,7 +4,7 @@ import ModalBox from './ModalBox';
 const Faccao = () => {
   return (
     <div>
-        <ModalBox />
+        <ModalBox tags={['ADEPTUS ASTARTE', 'IMPERIUM', 'STORM BRINGER', 'ASSAULT', 'ASSAULT SQUAD']}/>
     </div>
   )
 }

@@ -3,8 +3,41 @@ import './ModalBox.css';
 import { CubeFocus } from '@phosphor-icons/react';
 import LogoShockHounds from '../../assets/icons/LogoShockHounds';
 import ShieldIcon from '../../assets/icons/ShieldIcon';
+import BgModalBox from '../../assets/icons/BgModalBox';
+import IconM from '../../assets/icons/IconM';
+import IconT from '../../assets/icons/IconT';
+import IconSV from '../../assets/icons/IconSV';
+import IconW from '../../assets/icons/IconW';
+import IconLD from '../../assets/icons/IconLD';
+import IconOC from '../../assets/icons/IconOC';
+import AvailableAction from '../../assets/icons/AvailableActions';
 
-const ModalBox = () => {
+interface PropsModalBox {
+    image: string;
+    name: string;
+    faction: string;
+    iconCompany: string;
+    statusPosition: string;
+    status: {
+        m: string;
+        t: string;
+        sv: string;
+        w: string;
+        ld: string;
+        oc: string;
+    };
+    tags: string[],
+    AvailableActions: AvailableActionsProps[]
+}
+
+interface AvailableActionsProps {
+    cp: string;
+    type: string;
+    icon: string;
+    title: string;
+}
+
+const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, AvailableActions }: PropsModalBox) => {
 
     React.useEffect(() => {
         const box = document.querySelector('.box');
@@ -38,7 +71,7 @@ const ModalBox = () => {
                     <div className="box-face box-face--back">
                         <div className="box-face-image-char-container">
                             <button className="box-face-image-active-3d"><CubeFocus /></button>
-                            <div className="box-face-image-char"></div>
+                            <div className="box-face-image-char" style={{backgroundImage: image}}></div>
                             <div className="box-face-char-degrade-container">
                                 <div className="box-face-char-status-cotainer">
                                     <div className='box-face-char-title-container'>
@@ -50,6 +83,24 @@ const ModalBox = () => {
                                             <LogoShockHounds />
                                             <ShieldIcon>+4</ShieldIcon>
                                         </div>
+                                    </div>
+                                    <div className="box-face-status-container">
+                                        <BgModalBox status='M' value='5"'><IconM /></BgModalBox>
+                                        <BgModalBox status='T' value='5'><IconT /></BgModalBox>
+                                        <BgModalBox status='SV' value='2+'><IconSV /></BgModalBox>
+                                        <BgModalBox status='W' value='3'><IconW /></BgModalBox>
+                                        <BgModalBox status='LD' value='2+'><IconLD /></BgModalBox>
+                                        <BgModalBox status='OC' value='1'><IconOC /></BgModalBox>
+                                    </div>
+                                    <div className='box-face-status-tags'>
+                                        { tags && tags.map((tag) => 
+                                            <h5>{tag}</h5>
+                                        )}
+                                    </div>
+                                    <div className="box-face-status-available-actions">
+                                        {AvailableActions.map(({cp, icon, title, type}) => 
+                                            <AvailableAction cp={cp} icon={icon} title={title} type={type} />
+                                        )}
                                     </div>
                                 </div>
                             </div>
