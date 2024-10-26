@@ -22,21 +22,12 @@ interface distProps {
 const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, AvailableActions }: PropsModalBox) => {
     const imagem3d = React.useRef<HTMLDivElement>(null);
     const Box = React.useRef<HTMLDivElement>(null);
+    const BoxContainer = React.useRef<HTMLDivElement>(null);
     const [activeImage3d, setActiveImage3d] = React.useState<boolean>(false);
     const [currentClass, SetCurrentClass] = React.useState<string>('');
     const [dist, setDist] = React.useState<distProps>({finalPosition: 0, startX: 0, movement: 0});
 
-    const [index, setIndex] = React.useState<number>(0);
-
-    function handleLeft() {
-        if(index > 0 ) setIndex(index - 1);
-        else setIndex(3);
-    }
-
-    function handleRight() {        
-        if(index < 3 ) setIndex(index + 1);
-        else setIndex(0);
-    }
+    const [index, setIndex] = React.useState(0);
 
     React.useEffect(() => {
         const showClass = `show-${index}`;
@@ -52,43 +43,75 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
        setActiveImage3d((active) => !active);
     }
 
-    function handleStart(event: TouchEvent): void {
+    function handleStart(event: TouchEvent): void {        
        setDist({...dist, startX: event.changedTouches[0].clientX});
     }
 
     function handleMove(event: TouchEvent): void {
+        const box = BoxContainer.current?.getBoundingClientRect();
+        if(!box) return;
         const pointerPosition = event.changedTouches[0].clientX;
-        const finalPosition = updatePosition(pointerPosition);        
-        onMoveBox(finalPosition);
+        if(pointerPosition < box.left || pointerPosition > box.right) return;
+        const movement = (dist.startX - pointerPosition) * 2;
+        const finalPosition =  dist.finalPosition - movement;        
+        onMoveBox(finalPosition, movement);
     }
 
-    function updatePosition(clientX: number) {
-        setDist({...dist, movement: (dist.startX - clientX) * 1.6});
-        return dist.finalPosition - dist.movement;
-    }
-
-    function onMoveBox(distX: number) {
-        const rotation = distX * 0.2;
-        if(rotation > -80) {
-            switch(currentClass) {
-                case 'show-0':
-                    Box.current!.style.transform = `translateZ(-37px) rotateY(${rotation}deg)`;
-                break;
-            }
+    function onMoveBox(distX: number, movement: number) {                
+        const rotation = index === 0 ? distX * 0.2 : (distX * 0.3);
+        console.log(index);
+        
+        switch(index) {
+            case 0:
+                Box.current!.style.transform = `translateZ(-37px) rotateY(${rotation}deg)`;
+            break;
+            case 1:
+                Box.current!.style.transform = `translateZ(-140px) rotateY(${rotation}deg)`;
+            break;
         }
+        setDist({...dist, movePosition: rotation, movement});
     }
 
     function handleEnd(event: TouchEvent): void {
-        
+        changeBoxEnd();
     }
+
+    function changeBoxEnd() {  
+        switch(index) {
+            case 0:
+                if (dist.movePosition < -50) {
+                    Box.current!.style.transform = 'translateZ(-140px) rotateY(-90deg)';
+                    setIndex(1);
+                } else if (dist.movePosition > 50) {
+                    Box.current!.style.transform = 'translateZ(-140px) rotateY(90deg)';
+                    setIndex(3);
+                } else {                    
+                    Box.current!.style.transform = 'translateZ(-37px) rotateY(0deg)';
+                    setIndex(0);
+                }
+            break;
+            case 1:
+                if (dist.movePosition < -50) {
+                    Box.current!.style.transform = 'translateZ(-140px) rotateY(-90deg)';
+                    setIndex(2);
+                } else if (dist.movePosition > 50) {
+                    Box.current!.style.transform = 'translateZ(-140px) rotateY(90deg)';
+                    setIndex(0);
+                } else {                    
+                    Box.current!.style.transform = 'translateZ(-37px) rotateY(0deg)';
+                    setIndex(1);
+                }
+            break;
+        }
+    }    
 
   return (
     <>
             <div className='modal-box-container'
             onTouchStart={handleStart}
             onTouchMove={handleMove}
-            onTouchEnd={handleEnd}>
-                <button className="modal-box-container-button" onClick={handleLeft}><CaretLeft size={'1.2rem'}/></button>
+            onTouchEnd={handleEnd}
+            ref={BoxContainer}>
                 <div className="box" ref={Box}>
                     <div className="box-face box-face--front"></div>
                     <div className="box-face box-face--back">
@@ -134,7 +157,6 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
                     <div className="box-face box-face--top"></div>
                     <div className="box-face box-face--bottom"></div>
                 </div>
-                <button className="modal-box-container-button" onClick={handleRight}><CaretRight size={'1.2rem'}/></button>
             </div>
     </>
   )
