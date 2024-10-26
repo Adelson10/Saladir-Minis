@@ -76,7 +76,8 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
         changeBoxEnd();
     }
 
-    function changeBoxEnd() {  
+    function changeBoxEnd() { 
+        setDist({...dist, finalPosition: dist.movePosition}) 
         switch(index) {
             case 0:
                 if (dist.movePosition < -50) {
