@@ -12,11 +12,19 @@ import IconLD from '../../assets/icons/IconLD';
 import IconOC from '../../assets/icons/IconOC';
 import AvailableAction from './AvailableActions';
 
+interface distProps {
+    finalPosition: number;
+    startX: number;
+    movement: number;
+    movePosition?: number;
+}
+
 const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, AvailableActions }: PropsModalBox) => {
     const imagem3d = React.useRef<HTMLDivElement>(null);
     const Box = React.useRef<HTMLDivElement>(null);
     const [activeImage3d, setActiveImage3d] = React.useState<boolean>(false);
     const [currentClass, SetCurrentClass] = React.useState<string>('');
+    const [dist, setDist] = React.useState<distProps>({finalPosition: 0, startX: 0, movement: 0});
 
     const [index, setIndex] = React.useState<number>(0);
 
@@ -44,9 +52,42 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
        setActiveImage3d((active) => !active);
     }
 
+    function handleStart(event: TouchEvent): void {
+       setDist({...dist, startX: event.changedTouches[0].clientX});
+    }
+
+    function handleMove(event: TouchEvent): void {
+        const pointerPosition = event.changedTouches[0].clientX;
+        const finalPosition = updatePosition(pointerPosition);        
+        onMoveBox(finalPosition);
+    }
+
+    function updatePosition(clientX: number) {
+        setDist({...dist, movement: (dist.startX - clientX) * 1.6});
+        return dist.finalPosition - dist.movement;
+    }
+
+    function onMoveBox(distX: number) {
+        const rotation = distX * 0.2;
+        if(rotation > -80) {
+            switch(currentClass) {
+                case 'show-0':
+                    Box.current!.style.transform = `translateZ(-37px) rotateY(${rotation}deg)`;
+                break;
+            }
+        }
+    }
+
+    function handleEnd(event: TouchEvent): void {
+        
+    }
+
   return (
     <>
-            <div className='modal-box-container'>
+            <div className='modal-box-container'
+            onTouchStart={handleStart}
+            onTouchMove={handleMove}
+            onTouchEnd={handleEnd}>
                 <button className="modal-box-container-button" onClick={handleLeft}><CaretLeft size={'1.2rem'}/></button>
                 <div className="box" ref={Box}>
                     <div className="box-face box-face--front"></div>
