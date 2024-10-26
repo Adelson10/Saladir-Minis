@@ -13,10 +13,11 @@ import IconOC from '../../assets/icons/IconOC';
 import AvailableAction from './AvailableActions';
 
 interface distProps {
-    finalPosition: number;
+    finalPosition: number | undefined;
     startX: number;
     movement: number;
     movePosition?: number;
+    sideNow: number;
 }
 
 const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, AvailableActions }: PropsModalBox) => {
@@ -25,19 +26,17 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
     const BoxContainer = React.useRef<HTMLDivElement>(null);
     const [activeImage3d, setActiveImage3d] = React.useState<boolean>(false);
     const [currentClass, SetCurrentClass] = React.useState<string>('');
-    const [dist, setDist] = React.useState<distProps>({finalPosition: 0, startX: 0, movement: 0});
-
-    const [index, setIndex] = React.useState(0);
+    const [dist, setDist] = React.useState<distProps>({finalPosition: 0, startX: 0, movement: 0, sideNow: 0});
 
     React.useEffect(() => {
-        const showClass = `show-${index}`;
+        const showClass = `show-${dist.sideNow}`;
         
         if ( currentClass ) {                            
             Box.current!.classList.remove(currentClass);
         }
         Box.current!.classList.add(showClass);
         SetCurrentClass(showClass);
-    }, [index]);
+    }, [dist.sideNow]);
 
     function handleClick(): void {
        setActiveImage3d((active) => !active);
@@ -49,26 +48,32 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
 
     function handleMove(event: TouchEvent): void {
         const box = BoxContainer.current?.getBoundingClientRect();
-        if(!box) return;
+        if(!box) return;        
         const pointerPosition = event.changedTouches[0].clientX;
         if(pointerPosition < box.left || pointerPosition > box.right) return;
-        const movement = (dist.startX - pointerPosition) * 2;
-        const finalPosition =  dist.finalPosition - movement;        
-        onMoveBox(finalPosition, movement);
+        const movement = (dist.startX - pointerPosition) * 1.6;
+        if(dist.finalPosition !== undefined) {
+            const finalPosition =  dist.finalPosition - movement;        
+            onMoveBox(finalPosition, movement);
+        }
     }
 
-    function onMoveBox(distX: number, movement: number) {                
-        const rotation = index === 0 ? distX * 0.2 : (distX * 0.3);
-        console.log(index);
-        
-        switch(index) {
-            case 0:
+    function onMoveBox(distX: number, movement: number) {      
+        const rotation = distX * 0.2;
+
+        if((dist.sideNow+1) % 2 == 0) {
+            console.log('0');
+            
+            if( rotation < ((-90*(dist.sideNow+1))+10) ) {
                 Box.current!.style.transform = `translateZ(-37px) rotateY(${rotation}deg)`;
-            break;
-            case 1:
+            }
+        } else {  
+            console.log('1');
+                   
+            if( rotation < ((-90*(dist.sideNow+1))+10) ) {
                 Box.current!.style.transform = `translateZ(-140px) rotateY(${rotation}deg)`;
-            break;
-        }
+            }    
+        }     
         setDist({...dist, movePosition: rotation, movement});
     }
 
@@ -77,33 +82,15 @@ const ModalBox = ({image, name, iconCompany, statusPosition, status, tags, Avail
     }
 
     function changeBoxEnd() { 
-        setDist({...dist, finalPosition: dist.movePosition}) 
-        switch(index) {
-            case 0:
-                if (dist.movePosition < -50) {
-                    Box.current!.style.transform = 'translateZ(-140px) rotateY(-90deg)';
-                    setIndex(1);
-                } else if (dist.movePosition > 50) {
-                    Box.current!.style.transform = 'translateZ(-140px) rotateY(90deg)';
-                    setIndex(3);
-                } else {                    
-                    Box.current!.style.transform = 'translateZ(-37px) rotateY(0deg)';
-                    setIndex(0);
-                }
-            break;
-            case 1:
-                if (dist.movePosition < -50) {
-                    Box.current!.style.transform = 'translateZ(-140px) rotateY(-90deg)';
-                    setIndex(2);
-                } else if (dist.movePosition > 50) {
-                    Box.current!.style.transform = 'translateZ(-140px) rotateY(90deg)';
-                    setIndex(0);
-                } else {                    
-                    Box.current!.style.transform = 'translateZ(-37px) rotateY(0deg)';
-                    setIndex(1);
-                }
-            break;
+        let index = dist.sideNow;
+        if ( dist.movePosition > ((index+1) * -90) && ( index+1 ) % 2 != 0) {
+            index++;
+            if(index > 0) {                                            
+                Box.current!.style.transform = `translateZ(-140px) rotateY(-${index*90}deg)`;
+            }
         }
+        console.log(index);
+        setDist({...dist, finalPosition: dist.movePosition, sideNow: index});
     }    
 
   return (
