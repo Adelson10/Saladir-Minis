@@ -2,6 +2,7 @@ import LogoStormBringers from '../../assets/icons/LogoStormBringers';
 import LogoWolfDescription from '../../assets/icons/LogoWolfDescription';
 import Faccao from '../Faccao/Faccao';
 import Header from '../Header/Header';
+import StromBringers from '../Mockup/FaccoesMockup';
 import Sociais from '../utils/Sociais';
 import './Home.css';
 
@@ -42,7 +43,8 @@ const Home = () => {
               <div className="container-description-border-sides"></div>
             </div>
           </div>
-          <Faccao />
+          <Faccao faction={StromBringers} type='good'/>
+          <Faccao faction={StromBringers} type='good'/>
       </div>
       
     </>

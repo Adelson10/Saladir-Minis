@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { CaretLeft, CaretRight, CubeFocus } from '@phosphor-icons/react';
-import LogoShockHounds from '../../assets/icons/LogoShockHounds';
 import ShieldIcon from '../../assets/icons/ShieldIcon';
 import BgModalBox from '../../assets/icons/BgModalBox';
 import IconM from '../../assets/icons/IconM';
@@ -11,21 +10,15 @@ import IconLD from '../../assets/icons/IconLD';
 import IconOC from '../../assets/icons/IconOC';
 import AvailableAction from './AvailableActions';
 import './ModalBox.css';
+import useMedia from '../Hooks/useMedia';
+import ModalImage3d from './ModalImage3d';
 
-interface DistProps {
-    finalPosition?: number;
-    startX: number;
-    movement: number;
-    movePosition?: number;
-    sideNow: number;
-}
-
-const ModalBox = ({ image, tags, AvailableActions }: PropsModalBox) => {
-    const imagem3d = useRef<HTMLDivElement>(null);
+const ModalBox = ( {product, index, type} : {product: PropsModalBox[], index: number, type: string}) => {
     const Box = useRef<HTMLDivElement>(null);
     const BoxContainer = useRef<HTMLDivElement>(null);
     const [activeImage3d, setActiveImage3d] = useState(false);
     const [dist, setDist] = useState<DistProps>({ finalPosition: 0, startX: 0, movement: 0, sideNow: 0 });
+    const mobile = useMedia(1000);
 
     const handleClick = () => {
         setActiveImage3d((active) => !active);
@@ -63,7 +56,6 @@ const ModalBox = ({ image, tags, AvailableActions }: PropsModalBox) => {
             if (pointerPosition < box.left || pointerPosition > box.right) return;            
             const movement = (dist.startX - pointerPosition) * 1.6;
             if (movement < 0 && dist.sideNow === 0) return;
-
             if (dist.finalPosition !== undefined) {
                 const finalPosition = dist.finalPosition - movement;
                 updateBoxRotation(finalPosition, movement);
@@ -108,7 +100,7 @@ const ModalBox = ({ image, tags, AvailableActions }: PropsModalBox) => {
             sideNow: newSide
         }));
     };
-
+    
     return (
         <div
             className="modal-box-container"
@@ -117,10 +109,12 @@ const ModalBox = ({ image, tags, AvailableActions }: PropsModalBox) => {
             onTouchMove={handleMove}
             onTouchEnd={handleEnd}
         >
-            <button style={{visibility: !imagem3d || dist.sideNow == 0 ? 'hidden' : 'visible' }} className='modal-box-container-button left' onClick={handleLeft}><CaretLeft size={'1.2rem'} weight="fill" /></button>
+            {  !mobile && !activeImage3d && dist.sideNow < 0 &&
+                <button className='modal-box-container-button left' onClick={handleLeft}><CaretLeft size={'1.2rem'} weight="fill" /></button>
+            }
             <div className="box" ref={Box}>
                 <div className="box-face box-face--front"></div>
-                <div className="box-face box-face--back">
+                <div className={`box-face box-face--back ${type}`}>
                     <div className="box-face-image-char-container">
                         <button
                             className="box-face-image-active-3d"
@@ -129,32 +123,37 @@ const ModalBox = ({ image, tags, AvailableActions }: PropsModalBox) => {
                         >
                             <CubeFocus />
                         </button>
-                        <div className="box-face-image-char" ref={imagem3d}></div>
+                        { !activeImage3d ? 
+                            <div className="box-face-image-char" style={{backgroundImage: `url(${product[index].image[0]})`}}></div>
+                            :
+                            <ModalImage3d style='box-face-image-char' images={product[index].image}/>
+                        }
+                        
                         <div className="box-face-char-degrade-container">
                             <div className="box-face-char-status-container">
                                 <div className="box-face-char-title-container">
                                     <div className="box-face-char-title">
-                                        <h4>STORM BRINGER</h4>
-                                        <h3>INTERCESSORS</h3>
+                                        <h4>{product[index].faction}</h4>
+                                        <h3>{product[index].name}</h3>
                                     </div>
                                     <div className="box-face-char-title-icons">
-                                        <LogoShockHounds />
-                                        <ShieldIcon>+4</ShieldIcon>
+                                        {product[index].iconCompany}
+                                        <ShieldIcon>{product[index].statusPosition}</ShieldIcon>
                                     </div>
                                 </div>
                                 <div className="box-face-status-container">
-                                    <BgModalBox status="M" value="5"><IconM /></BgModalBox>
-                                    <BgModalBox status="T" value="5"><IconT /></BgModalBox>
-                                    <BgModalBox status="SV" value="2+"><IconSV /></BgModalBox>
-                                    <BgModalBox status="W" value="3"><IconW /></BgModalBox>
-                                    <BgModalBox status="LD" value="2+"><IconLD /></BgModalBox>
-                                    <BgModalBox status="OC" value="1"><IconOC /></BgModalBox>
+                                    <BgModalBox status="M" value={product[index].status.m}><IconM /></BgModalBox>
+                                    <BgModalBox status="T" value={product[index].status.t}><IconT /></BgModalBox>
+                                    <BgModalBox status="SV" value={product[index].status.sv}><IconSV /></BgModalBox>
+                                    <BgModalBox status="W" value={product[index].status.w}><IconW /></BgModalBox>
+                                    <BgModalBox status="LD" value={product[index].status.ld}><IconLD /></BgModalBox>
+                                    <BgModalBox status="OC" value={product[index].status.oc}><IconOC /></BgModalBox>
                                 </div>
                                 <div className="box-face-status-tags">
-                                    {tags && tags.map((tag) => <h5 key={tag}>{tag}</h5>)}
+                                    {product[index].tags && product[index].tags.map((tag) => <h5 key={tag}>{tag}</h5>)}
                                 </div>
                                 <div className="box-face-status-available-actions">
-                                    {AvailableActions && AvailableActions.map(({ cp, icon, title, type }) => (
+                                    {product[index].AvailableActions && product[index].AvailableActions.map(({ cp, icon, title, type }) => (
                                         <AvailableAction key={title} cp={cp} icon={icon} title={title} type={type} />
                                     ))}
                                 </div>
@@ -167,7 +166,9 @@ const ModalBox = ({ image, tags, AvailableActions }: PropsModalBox) => {
                 <div className="box-face box-face--top"></div>
                 <div className="box-face box-face--bottom"></div>
             </div>
-            <button style={{visibility: !imagem3d ? 'hidden' : 'visible' }} className='modal-box-container-button right' onClick={handleRight}><CaretRight size={'1.2rem'} weight="fill" /></button>
+            { (!mobile && !activeImage3d) &&
+                <button className='modal-box-container-button right' onClick={handleRight}><CaretRight size={'1.2rem'} weight="fill" /></button>
+            }
         </div>
     );
 };

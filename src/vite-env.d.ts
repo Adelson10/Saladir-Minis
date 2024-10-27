@@ -1,8 +1,13 @@
+interface FactionProps {
+    title: string;
+    products: PropsModalBox[];
+}
+
 interface PropsModalBox {
-    image: string;
+    image: string[];
     name: string;
     faction: string;
-    iconCompany: string;
+    iconCompany: JSX.Element;
     statusPosition: string;
     status: {
         m: string;
@@ -13,7 +18,10 @@ interface PropsModalBox {
         oc: string;
     };
     tags: string[],
-    AvailableActions: AvailableActionsProps[]
+    AvailableActions: AvailableActionsProps[];
+    subtitle: string;
+    description: string;
+    author: string;
 }
 
 interface AvailableActionsProps {
@@ -21,4 +29,12 @@ interface AvailableActionsProps {
     type: string;
     icon: string;
     title: string;
+}
+
+interface DistProps {
+    finalPosition?: number;
+    startX: number;
+    movement: number;
+    movePosition?: number;
+    sideNow: number;
 }

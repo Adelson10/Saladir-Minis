@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .box {
@@ -32,8 +33,7 @@
   height: 480px;
 }
 
-.box-face--front,
-.box-face--back {
+.box-face--front {
   background: url('../../assets/utils/Box/Front.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -44,20 +44,14 @@
 .box-face--left {
   width: 74px;
   height: 480px;
-  left: 103px; /* Mantido para alinhamento */
+  left: 103px;
 }
 
 .box-face--top,
 .box-face--bottom {
   width: 280px;
   height: 74px;
-  top: 203px; /* Mantido para alinhamento */
-}
-
-/* Estilos de fundo para as faces */
-.box-face--back {
-  background-image: linear-gradient(#000d0f8e, #000d0fb4), url('../../assets/bg/moda-storm.png');
-  background-size: cover;
+  top: 203px;
 }
 
 .box-face--right { background: url('../../assets/utils/Box/Left.png'); background-size: cover; background-position: center; }
@@ -78,12 +72,15 @@
 }
 
 .box-face-image-char {
-  width: 100%;
   height: 65%;
-  background-image: url('../../assets/Products/SM_01_360/0001.png');
+  margin: 0 auto;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  user-select: none;
+  -webkit-user-drag: none; 
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .box-face-image-active-3d {
@@ -96,6 +93,7 @@
   height: 2rem;
   width: 2rem;
   padding: 0;
+  cursor: pointer;
 }
 
 .box-face-image-active-3d > svg {

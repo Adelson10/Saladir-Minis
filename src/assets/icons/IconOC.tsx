@@ -1,5 +1,3 @@
-import React from "react";
-
 function IconOC() {
   return (
     <svg

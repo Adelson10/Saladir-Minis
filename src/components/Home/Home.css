@@ -115,7 +115,7 @@
 }
 
 .container-description-container {
-    width: 90%;
+    max-width: 85%;
     margin: 0 auto;
     padding: 2rem;
     border-radius: 1rem;
@@ -124,6 +124,9 @@
     background: hsla(188, 100%, 3%, 0.7);
     box-shadow: 0px 0px 9px 0px hwb(0 100% 0% / 0.03) ;
     transform: translateY(-70px);
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
 }
 
 .container-description-bg {
@@ -152,10 +155,14 @@
 }
 
 .container-description-text {
-    transform: translateY(-200px);
+    transform: translateY(-350px);
     max-width: 500px;
     margin: 0 auto;
-    margin-bottom: -150px;
+    margin-bottom: -300px;
+}
+
+.container-description-text h1 {
+    text-align: center;
 }
 
 .container-description-container p {
@@ -201,4 +208,20 @@
     height: 50%;
     background-size: cover;
     background-position: center center;
+}
+
+@media (max-width: 1000px) {
+    .container-description-container {
+        width: 90%;
+    }
+
+    .anuncio-title-container h1{
+        font-size: 5rem;
+        line-height: 3rem;
+    }
+
+    .anuncio-title-container h2 {
+        font-size: 1.2rem;
+        line-height: 1rem;
+    }
 }
