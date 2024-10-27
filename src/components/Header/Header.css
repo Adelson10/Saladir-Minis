@@ -47,3 +47,9 @@ nav ul > li:hover > svg {
         font-size: .8rem;
     }
 }
+
+@media (max-width: 600px) {
+    header {
+       visibility: hidden;
+    }
+}

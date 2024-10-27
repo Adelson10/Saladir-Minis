@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const ModalImage3d = ({ style, images }: { style: string; images: string[] }) => {
-    const boxRef = useRef<HTMLDivElement>(null);
+    const boxRef = useRef<HTMLImageElement>(null);
     const [dist, setDist] = useState<DistProps>({
       finalPosition: 0,
       startX: 0,
@@ -73,11 +73,11 @@ const ModalImage3d = ({ style, images }: { style: string; images: string[] }) =>
       <div ref={boxContainerRef} className='box-face-image-char-container'>
         {images.map((image, index) => (
           <img
+            ref={boxRef}
             key={index}
             src={image}
             style={{ display: dist.sideNow === index ? 'block' : 'none' }}
             className={style}
-            ref={boxRef}
             onTouchStart={handleStart}
             onTouchMove={(e) => handleMove(e.nativeEvent as TouchEvent)}
             onTouchEnd={handleEnd}
