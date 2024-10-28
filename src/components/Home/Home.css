@@ -215,6 +215,7 @@
 @media (max-width: 1000px) {
     .container-description-container {
         width: 90%;
+        padding: 2rem 1rem;
     }
 
     .anuncio-title-container h1{
