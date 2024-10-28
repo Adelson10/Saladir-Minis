@@ -7,7 +7,7 @@ interface PropsModalBox {
     image: string[];
     name: string;
     faction: string;
-    iconCompany: JSX.Element;
+    iconCompany: string;
     statusPosition: string;
     status: {
         m: string;
@@ -22,6 +22,9 @@ interface PropsModalBox {
     subtitle: string;
     description: string;
     author: string;
+    FrontBox: string;
+    LeftBox: string;
+    RightBox: string;
 }
 
 interface AvailableActionsProps {

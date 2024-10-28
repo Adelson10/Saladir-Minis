@@ -13,7 +13,7 @@ import './ModalBox.css';
 import useMedia from '../Hooks/useMedia';
 import ModalImage3d from './ModalImage3d';
 
-const ModalBox = ( {product, index, type} : {product: PropsModalBox[], index: number, type: string}) => {
+const ModalBox = ( {product, index, type} : {product: PropsModalBox, index: number, type: string}) => {
     const Box = useRef<HTMLDivElement>(null);
     const BoxContainer = useRef<HTMLDivElement>(null);
     const [activeImage3d, setActiveImage3d] = useState(false);
@@ -113,7 +113,7 @@ const ModalBox = ( {product, index, type} : {product: PropsModalBox[], index: nu
                 <button className='modal-box-container-button left' onClick={handleLeft}><CaretLeft size={'1.2rem'} weight="fill" /></button>
             }
             <div className="box" ref={Box}>
-                <div className="box-face box-face--front"></div>
+                <div className="box-face box-face--front" style={{backgroundImage: `url(${product.FrontBox})`}}></div>
                 <div className={`box-face box-face--back ${type}`}>
                     <div className="box-face-image-char-container">
                         <button
@@ -124,36 +124,36 @@ const ModalBox = ( {product, index, type} : {product: PropsModalBox[], index: nu
                             <CubeFocus />
                         </button>
                         { !activeImage3d ? 
-                            <div className="box-face-image-char" style={{backgroundImage: `url(${product[index].image[0]})`}}></div>
+                            <div className="box-face-image-char" style={{backgroundImage: `url(${product.image[0]})`}}></div>
                             :
-                            <ModalImage3d style='box-face-image-char' images={product[index].image}/>
+                            <ModalImage3d style='box-face-image-char' images={product.image}/>
                         }
                         
                         <div className="box-face-char-degrade-container">
                             <div className="box-face-char-status-container">
                                 <div className="box-face-char-title-container">
                                     <div className="box-face-char-title">
-                                        <h4>{product[index].faction}</h4>
-                                        <h3>{product[index].name}</h3>
+                                        <h4>{product.faction}</h4>
+                                        <h3>{product.name}</h3>
                                     </div>
                                     <div className="box-face-char-title-icons">
-                                        {product[index].iconCompany}
-                                        <ShieldIcon>{product[index].statusPosition}</ShieldIcon>
+                                        <img src={product.iconCompany} alt="icone companhia" />
+                                        <ShieldIcon>{product.statusPosition}</ShieldIcon>
                                     </div>
                                 </div>
                                 <div className="box-face-status-container">
-                                    <BgModalBox status="M" value={product[index].status.m}><IconM /></BgModalBox>
-                                    <BgModalBox status="T" value={product[index].status.t}><IconT /></BgModalBox>
-                                    <BgModalBox status="SV" value={product[index].status.sv}><IconSV /></BgModalBox>
-                                    <BgModalBox status="W" value={product[index].status.w}><IconW /></BgModalBox>
-                                    <BgModalBox status="LD" value={product[index].status.ld}><IconLD /></BgModalBox>
-                                    <BgModalBox status="OC" value={product[index].status.oc}><IconOC /></BgModalBox>
+                                    <BgModalBox status="M" value={product.status.m}><IconM /></BgModalBox>
+                                    <BgModalBox status="T" value={product.status.t}><IconT /></BgModalBox>
+                                    <BgModalBox status="SV" value={product.status.sv}><IconSV /></BgModalBox>
+                                    <BgModalBox status="W" value={product.status.w}><IconW /></BgModalBox>
+                                    <BgModalBox status="LD" value={product.status.ld}><IconLD /></BgModalBox>
+                                    <BgModalBox status="OC" value={product.status.oc}><IconOC /></BgModalBox>
                                 </div>
                                 <div className="box-face-status-tags">
-                                    {product[index].tags && product[index].tags.map((tag) => <h5 key={tag}>{tag}</h5>)}
+                                    {product.tags && product.tags.map((tag) => <h5 key={tag}>{tag}</h5>)}
                                 </div>
                                 <div className="box-face-status-available-actions">
-                                    {product[index].AvailableActions && product[index].AvailableActions.map(({ cp, icon, title, type }) => (
+                                    {product.AvailableActions && product.AvailableActions.map(({ cp, icon, title, type }) => (
                                         <AvailableAction key={title} cp={cp} icon={icon} title={title} type={type} />
                                     ))}
                                 </div>
@@ -161,8 +161,8 @@ const ModalBox = ( {product, index, type} : {product: PropsModalBox[], index: nu
                         </div>
                     </div>
                 </div>
-                <div className="box-face box-face--right"></div>
-                <div className="box-face box-face--left"></div>
+                <div className="box-face box-face--right" style={{backgroundImage: `url(${product.RightBox})`}}></div>
+                <div className="box-face box-face--left" style={{backgroundImage: `url(${product.LeftBox})`}}></div>
                 <div className="box-face box-face--top"></div>
                 <div className="box-face box-face--bottom"></div>
             </div>

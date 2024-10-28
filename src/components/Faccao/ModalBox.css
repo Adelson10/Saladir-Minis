@@ -33,12 +33,7 @@
   height: 480px;
 }
 
-.box-face--front {
-  background: url('../../assets/utils/Box/Front.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+.box-face--front { background-size: cover; background-repeat: no-repeat; background-position: center; }
 
 .box-face--right,
 .box-face--left {
@@ -54,8 +49,8 @@
   top: 203px;
 }
 
-.box-face--right { background: url('../../assets/utils/Box/Left.png'); background-size: cover; background-position: center; }
-.box-face--left { background: url('../../assets/utils/Box/Right.png'); background-size: cover; background-position: center;}
+.box-face--right { background-size: cover; background-position: center; }
+.box-face--left { background-size: cover; background-position: center;}
 .box-face--top, .box-face--bottom { background: hsl(0, 0%, 0%); }
 
 /* Transformações para posicionar as faces */
@@ -118,19 +113,26 @@
 
 .box-face-char-title h4 {
   color: var(--color-secundary);
-  line-height: 0.8rem;
-  font-size: 0.8rem;
+  line-height: 0.7rem;
+  font-size: 0.7rem;
   margin: 0;
   font-weight: 400;
   padding-bottom: 0.2rem;
+  text-transform: uppercase;
 }
 
 .box-face-char-title h3 {
   color: var(--color-primary);
-  line-height: 1rem;
+  line-height: 1.2rem;
   font-size: 1.5rem;
   margin: 0;
   font-weight: 700;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
 }
 
 .box-face-char-title-icons {

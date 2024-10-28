@@ -1,38 +1,72 @@
 import ModalBox from './ModalBox';
 import './Faccao.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import './Faccao.css';
+import { Pagination } from 'swiper/modules';
 import React from 'react';
 
-const Faccao = ({faction, type}: {faction: FactionProps, type: string}) => {
-  const [index] = React.useState<number>(0);
-  
+const Faccao = ({ faction, type }: { faction: FactionProps, type: string }) => {
+  const [index, setIndex] = React.useState<number>(0);
+
   return (
     <div className='faccao-container'>
-        <ModalBox product={faction.products} index={index} type={type}/>
-        <div className="faccao-text-container">
-          <h1 className='home-title'>STORM BRINGERS</h1>
-          <h2>Assault Intercessors</h2>
-          <p className='faccao-text-description'>Os Storm Bringers são um capítulo de Fuzileiros do Espaço Sideral cujas origens e tradições estão profundamente ligadas aos elementos da natureza, em especial às tempestades, das quais derivam seu nome e filosofia de combate. Criados como um dos sucessores dos Selvagens do Espaço Sideral, eles compartilham alguns traços ferozes e guerreiros de seus antecessores, mas com uma abordagem mais estratégica e disciplinada.</p>
-          <p className='faccao-text-author'><div className="line-author"></div>Nikkar</p>
-          <div className="faccao-products-list">
-            <Swiper>
-              {faction.products.map(({image, faction, name}) => 
-                <SwiperSlide key={name}>
-                  <button className={`faccao-product ${type}`}>
-                    <div style={{backgroundImage: `url(${image[0]})`}} className="faccao-product-image">
-                      <div className="faccao-product-text-container">
-                        <h2>{faction}</h2>
-                        <h3>{name}</h3>
-                      </div>
+      <ModalBox product={faction.products[index]} index={index} type={type} />
+      <div className="faccao-text-container">
+        <h1 className='home-title'>{faction.title}</h1>
+        <h2>{faction.products[index].name}</h2>
+        <p className='faccao-text-description'>{faction.products[index].description}</p>
+        <p className='faccao-text-author'>
+          <div className="line-author"></div>{faction.products[index].author}
+        </p>
+        <div className="faccao-products-list">
+        <Swiper
+        slidesPerView={1}
+        spaceBetween={20}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1800: {
+            slidesPerView: 4,
+            spaceBetween: 16,
+          }
+        }}
+        modules={[Pagination]}
+      >
+            {faction.products.map(({ image, faction, name }, i) => (
+              <SwiperSlide key={name}>
+                <button className={`faccao-product ${type}`} onClick={() => setIndex(i)}>
+                  <div
+                    style={{ backgroundImage: `url(${image[0]})` }}
+                    className="faccao-product-image"
+                  >
+                    <div className="faccao-product-text-container">
+                      <h2>{faction}</h2>
+                      <h3>{name}</h3>
                     </div>
-                  </button>
-                </SwiperSlide>
-              )}
-            </Swiper>
-          </div>
+                  </div>
+                </button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Faccao;
