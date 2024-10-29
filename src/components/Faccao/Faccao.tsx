@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import React from 'react';
 
-const Faccao = ({ faction, type, reverse }: { faction: FactionProps, type: string, reverse?: false }) => {
+const Faccao = ({ faction, type, reverse = false }: { faction: FactionProps, type: string, reverse?: boolean }) => {
   const [index, setIndex] = React.useState<number>(0);
 
   return (

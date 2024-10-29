@@ -324,7 +324,7 @@ export const StromBringers: FactionProps = {
             tags: ['ADEPTUS ASTARTE', 'IMPERIUM', 'STORM BRINGER', 'HEAVY', 'ASSAULT SQUAD', 'SHOCK HOUNDS'],
             faction: 'Shock Hounds',
             iconCompany: LogoShockHounds,
-            name: 'Assault intercessors widh Jump Pack',
+            name: 'Eliminators',
             status: {
                 m: '5"',
                 t: '5',

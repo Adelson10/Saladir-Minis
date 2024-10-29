@@ -10,7 +10,7 @@ import IconLD from '../../assets/icons/IconLD';
 import IconOC from '../../assets/icons/IconOC';
 import AvailableAction from './AvailableActions';
 import './ModalBox.css';
-import useMedia from '../Hooks/useMedia';
+import useMedia from '../../Hooks/useMedia';
 import ModalImage3d from './ModalImage3d';
 
 const ModalBox = ( {product, index, type} : {product: PropsModalBox, index: number, type: string}) => {
