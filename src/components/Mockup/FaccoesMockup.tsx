@@ -40,15 +40,65 @@ import SM02Imagem18 from '../../assets/Products/SM360/SM_02_360/0018.png';
 import SM02Imagem19 from '../../assets/Products/SM360/SM_02_360/0019.png';
 import SM02Imagem20 from '../../assets/Products/SM360/SM_02_360/0020.png';
 
-import LogoShockHounds from '../../assets/icons/logo-shock-hounds.png';
-
 import SM01Front from '../../assets/Products/SM360/SM_01_360/Box/Front.png';
 import SM01Left from '../../assets/Products/SM360/SM_01_360/Box/Left.png';
 import SM01Right from '../../assets/Products/SM360/SM_01_360/Box/Right.png';
 
+import LogoShockHounds from '../../assets/icons/logo-shock-hounds.png';
+
 import SM02Front from '../../assets/Products/SM360/SM_02_360/Box/Front.png';
 import SM02Left from '../../assets/Products/SM360/SM_02_360/Box/Left.png';
 import SM02Right from '../../assets/Products/SM360/SM_02_360/Box/Right.png';
+
+import SM03Imagem1 from '../../assets/Products/SM360/SM_03_360/0001.png';
+import SM03Imagem2 from '../../assets/Products/SM360/SM_03_360/0002.png';
+import SM03Imagem3 from '../../assets/Products/SM360/SM_03_360/0003.png';
+import SM03Imagem4 from '../../assets/Products/SM360/SM_03_360/0004.png';
+import SM03Imagem5 from '../../assets/Products/SM360/SM_03_360/0005.png';
+import SM03Imagem6 from '../../assets/Products/SM360/SM_03_360/0006.png';
+import SM03Imagem7 from '../../assets/Products/SM360/SM_03_360/0007.png';
+import SM03Imagem8 from '../../assets/Products/SM360/SM_03_360/0008.png';
+import SM03Imagem9 from '../../assets/Products/SM360/SM_03_360/0009.png';
+import SM03Imagem10 from '../../assets/Products/SM360/SM_03_360/0010.png';
+import SM03Imagem11 from '../../assets/Products/SM360/SM_03_360/0011.png';
+import SM03Imagem12 from '../../assets/Products/SM360/SM_03_360/0012.png';
+import SM03Imagem13 from '../../assets/Products/SM360/SM_03_360/0013.png';
+import SM03Imagem14 from '../../assets/Products/SM360/SM_03_360/0014.png';
+import SM03Imagem15 from '../../assets/Products/SM360/SM_03_360/0015.png';
+import SM03Imagem16 from '../../assets/Products/SM360/SM_03_360/0016.png';
+import SM03Imagem17 from '../../assets/Products/SM360/SM_03_360/0017.png';
+import SM03Imagem18 from '../../assets/Products/SM360/SM_03_360/0018.png';
+import SM03Imagem19 from '../../assets/Products/SM360/SM_03_360/0019.png';
+import SM03Imagem20 from '../../assets/Products/SM360/SM_03_360/0020.png';
+
+import SM03Front from '../../assets/Products/SM360/SM_03_360/Box/Front.png';
+import SM03Left from '../../assets/Products/SM360/SM_03_360/Box/Left.png';
+import SM03Right from '../../assets/Products/SM360/SM_03_360/Box/Right.png';
+
+import SM04Imagem1 from '../../assets/Products/SM360/SM_04_360/0001.png';
+import SM04Imagem2 from '../../assets/Products/SM360/SM_04_360/0002.png';
+import SM04Imagem3 from '../../assets/Products/SM360/SM_04_360/0003.png';
+import SM04Imagem4 from '../../assets/Products/SM360/SM_04_360/0004.png';
+import SM04Imagem5 from '../../assets/Products/SM360/SM_04_360/0005.png';
+import SM04Imagem6 from '../../assets/Products/SM360/SM_04_360/0006.png';
+import SM04Imagem7 from '../../assets/Products/SM360/SM_04_360/0007.png';
+import SM04Imagem8 from '../../assets/Products/SM360/SM_04_360/0008.png';
+import SM04Imagem9 from '../../assets/Products/SM360/SM_04_360/0009.png';
+import SM04Imagem10 from '../../assets/Products/SM360/SM_04_360/0010.png';
+import SM04Imagem11 from '../../assets/Products/SM360/SM_04_360/0011.png';
+import SM04Imagem12 from '../../assets/Products/SM360/SM_04_360/0012.png';
+import SM04Imagem13 from '../../assets/Products/SM360/SM_04_360/0013.png';
+import SM04Imagem14 from '../../assets/Products/SM360/SM_04_360/0014.png';
+import SM04Imagem15 from '../../assets/Products/SM360/SM_04_360/0015.png';
+import SM04Imagem16 from '../../assets/Products/SM360/SM_04_360/0016.png';
+import SM04Imagem17 from '../../assets/Products/SM360/SM_04_360/0017.png';
+import SM04Imagem18 from '../../assets/Products/SM360/SM_04_360/0018.png';
+import SM04Imagem19 from '../../assets/Products/SM360/SM_04_360/0019.png';
+import SM04Imagem20 from '../../assets/Products/SM360/SM_04_360/0020.png';
+
+import SM04Front from '../../assets/Products/SM360/SM_04_360/Box/Front.png';
+import SM04Left from '../../assets/Products/SM360/SM_04_360/Box/Left.png';
+import SM04Right from '../../assets/Products/SM360/SM_04_360/Box/Right.png';
 
 import ray from '../../assets/icons/ray.svg';
 import tyranids from '../../assets/icons/Tyranids.png';
@@ -76,7 +126,6 @@ import TYImagem20 from '../../assets/Products/TY360/0020.png';
 import TYFront from '../../assets/Products/TY360/Box/Front.png';
 import TYLeft from '../../assets/Products/TY360/Box/Left.png';
 import TYRight from '../../assets/Products/TY360/Box/Right.png';
-
 
 export const StromBringers: FactionProps = {
     title: 'Storm Bringers',
@@ -186,30 +235,30 @@ export const StromBringers: FactionProps = {
             author: 'Nikkar'
         },
         {   
-            FrontBox: SM02Front,
-            LeftBox: SM02Left,
-            RightBox: SM02Right,
+            FrontBox: SM03Front,
+            LeftBox: SM03Left,
+            RightBox: SM03Right,
             image: [
-                SM02Imagem1,
-                SM02Imagem2,
-                SM02Imagem3,
-                SM02Imagem4,
-                SM02Imagem5,
-                SM02Imagem6,
-                SM02Imagem7,
-                SM02Imagem8,
-                SM02Imagem9,
-                SM02Imagem10,
-                SM02Imagem11,
-                SM02Imagem12,
-                SM02Imagem13,
-                SM02Imagem14,
-                SM02Imagem15,
-                SM02Imagem16,
-                SM02Imagem17,
-                SM02Imagem18,
-                SM02Imagem19,
-                SM02Imagem20,
+                SM03Imagem1,
+                SM03Imagem2,
+                SM03Imagem3,
+                SM03Imagem4,
+                SM03Imagem5,
+                SM03Imagem6,
+                SM03Imagem7,
+                SM03Imagem8,
+                SM03Imagem9,
+                SM03Imagem10,
+                SM03Imagem11,
+                SM03Imagem12,
+                SM03Imagem13,
+                SM03Imagem14,
+                SM03Imagem15,
+                SM03Imagem16,
+                SM03Imagem17,
+                SM03Imagem18,
+                SM03Imagem19,
+                SM03Imagem20,
             ],
             AvailableActions: 
             [
@@ -220,10 +269,10 @@ export const StromBringers: FactionProps = {
                 title: 'RELENTLESS ASSAULT',
               }
             ],
-            tags: ['ADEPTUS ASTARTE', 'IMPERIUM', 'STORM BRINGER', 'HEAVY', 'ASSAULT SQUAD', 'SHOCK HOUNDS'],
+            tags: ['ADEPTUS ASTARTE', 'IMPERIUM', 'STORM BRINGER', 'JUMP PACK', 'ASSAULT SQUAD', 'SHOCK HOUNDS'],
             faction: 'Shock Hounds',
             iconCompany: LogoShockHounds,
-            name: 'heavy intercessors2',
+            name: 'Jump Pack',
             status: {
                 m: '5"',
                 t: '5',
@@ -233,35 +282,35 @@ export const StromBringers: FactionProps = {
                 oc: '1'
             },
             statusPosition: '+4',
-            subtitle: 'heavy intercessors',
-            description: 'Os Heavy Assault dos Storm Bringers são uma força implacável de combate corpo a corpo e curta distância, combinando a brutalidade dos Selvagens do Espaço com uma pesada armadura e armamento devastador. Diferente dos Fuzileiros de Assalto convencionais, os Heavy Assault são equipados com armaduras Gravis, que oferecem proteção extra, permitindo que avancem sem hesitar em meio ao fogo inimigo, como se fossem o "olho da tempestade".',
+            subtitle: 'Jump Pack',
+            description: 'Os Jump Pack Assault dos Storm Bringers são uma força implacável, dominando o combate corpo a corpo e a curta distância com a brutalidade característica dos Selvagens do Espaço. Equipados com armaduras Gravis e jump packs, eles se lançam sobre o campo de batalha como verdadeiros arautos da destruição. Esses guerreiros não apenas absorvem danos, mas também desferem ataques devastadores, flutuando entre os inimigos com uma agilidade surpreendente para sua robustez.',
             author: 'Nikkar'
         },
         {   
-            FrontBox: SM02Front,
-            LeftBox: SM02Left,
-            RightBox: SM02Right,
+            FrontBox: SM04Front,
+            LeftBox: SM04Left,
+            RightBox: SM04Right,
             image: [
-                SM02Imagem1,
-                SM02Imagem2,
-                SM02Imagem3,
-                SM02Imagem4,
-                SM02Imagem5,
-                SM02Imagem6,
-                SM02Imagem7,
-                SM02Imagem8,
-                SM02Imagem9,
-                SM02Imagem10,
-                SM02Imagem11,
-                SM02Imagem12,
-                SM02Imagem13,
-                SM02Imagem14,
-                SM02Imagem15,
-                SM02Imagem16,
-                SM02Imagem17,
-                SM02Imagem18,
-                SM02Imagem19,
-                SM02Imagem20,
+                SM04Imagem1,
+                SM04Imagem2,
+                SM04Imagem3,
+                SM04Imagem4,
+                SM04Imagem5,
+                SM04Imagem6,
+                SM04Imagem7,
+                SM04Imagem8,
+                SM04Imagem9,
+                SM04Imagem10,
+                SM04Imagem11,
+                SM04Imagem12,
+                SM04Imagem13,
+                SM04Imagem14,
+                SM04Imagem15,
+                SM04Imagem16,
+                SM04Imagem17,
+                SM04Imagem18,
+                SM04Imagem19,
+                SM04Imagem20,
             ],
             AvailableActions: 
             [
@@ -275,7 +324,7 @@ export const StromBringers: FactionProps = {
             tags: ['ADEPTUS ASTARTE', 'IMPERIUM', 'STORM BRINGER', 'HEAVY', 'ASSAULT SQUAD', 'SHOCK HOUNDS'],
             faction: 'Shock Hounds',
             iconCompany: LogoShockHounds,
-            name: 'heavy intercessors1',
+            name: 'Assault intercessors widh Jump Pack',
             status: {
                 m: '5"',
                 t: '5',
@@ -285,61 +334,8 @@ export const StromBringers: FactionProps = {
                 oc: '1'
             },
             statusPosition: '+4',
-            subtitle: 'heavy intercessors',
-            description: 'Os Heavy Assault dos Storm Bringers são uma força implacável de combate corpo a corpo e curta distância, combinando a brutalidade dos Selvagens do Espaço com uma pesada armadura e armamento devastador. Diferente dos Fuzileiros de Assalto convencionais, os Heavy Assault são equipados com armaduras Gravis, que oferecem proteção extra, permitindo que avancem sem hesitar em meio ao fogo inimigo, como se fossem o "olho da tempestade".',
-            author: 'Nikkar'
-        },
-        ,
-        {   
-            FrontBox: SM02Front,
-            LeftBox: SM02Left,
-            RightBox: SM02Right,
-            image: [
-                SM02Imagem1,
-                SM02Imagem2,
-                SM02Imagem3,
-                SM02Imagem4,
-                SM02Imagem5,
-                SM02Imagem6,
-                SM02Imagem7,
-                SM02Imagem8,
-                SM02Imagem9,
-                SM02Imagem10,
-                SM02Imagem11,
-                SM02Imagem12,
-                SM02Imagem13,
-                SM02Imagem14,
-                SM02Imagem15,
-                SM02Imagem16,
-                SM02Imagem17,
-                SM02Imagem18,
-                SM02Imagem19,
-                SM02Imagem20,
-            ],
-            AvailableActions: 
-            [
-              {
-                cp: '1CP',
-                type: 'STR',
-                icon: ray,
-                title: 'RELENTLESS ASSAULT',
-              }
-            ],
-            tags: ['ADEPTUS ASTARTE', 'IMPERIUM', 'STORM BRINGER', 'HEAVY', 'ASSAULT SQUAD', 'SHOCK HOUNDS'],
-            faction: 'Shock Hounds',
-            iconCompany: LogoShockHounds,
-            name: 'heavy intercessors2',
-            status: {
-                m: '5"',
-                t: '5',
-                sv: '2+',
-                w: '3',
-                ld: '2+',
-                oc: '1'
-            },
-            statusPosition: '+4',
-            subtitle: 'heavy intercessors',
-            description: 'Os Heavy Assault dos Storm Bringers são uma força implacável de combate corpo a corpo e curta distância, combinando a brutalidade dos Selvagens do Espaço com uma pesada armadura e armamento devastador. Diferente dos Fuzileiros de Assalto convencionais, os Heavy Assault são equipados com armaduras Gravis, que oferecem proteção extra, permitindo que avancem sem hesitar em meio ao fogo inimigo, como se fossem o "olho da tempestade".',
+            subtitle: 'Eliminators',
+            description: 'Os Snipers dos Storm Bringers são os mestres da furtividade e da precisão letal, operando nas sombras para eliminar alvos críticos antes que o inimigo perceba sua presença. Equipados com rifles de longo alcance de última geração, eles combinam a astúcia dos Selvagens do Espaço com a tecnologia avançada, tornando-se caçadores implacáveis no campo de batalha.',
             author: 'Nikkar'
         },
     ]
@@ -399,6 +395,161 @@ export const Tyranids: FactionProps = {
             },
             statusPosition: '+4',
         },
-        
+        {   
+          subtitle: 'Termagants',
+          description: 'Os Tirânides são uma das raças alienígenas mais temidas do universo. Eles são uma forma de vida biológica coletiva, controlada por uma consciência superior conhecida como a Mente da Colmeia. próprias células.',
+          author: 'Rufus',
+          FrontBox: TYFront,
+          LeftBox: TYLeft,
+          RightBox: TYRight,
+          image: [
+              TYImagem1,
+              TYImagem2,
+              TYImagem3,
+              TYImagem4,
+              TYImagem5,
+              TYImagem6,
+              TYImagem7,
+              TYImagem8,
+              TYImagem9,
+              TYImagem10,
+              TYImagem11,
+              TYImagem12,
+              TYImagem13,
+              TYImagem14,
+              TYImagem15,
+              TYImagem16,
+              TYImagem17,
+              TYImagem18,
+              TYImagem19,
+              TYImagem20,
+          ],
+          AvailableActions: 
+          [
+            {
+              cp: '1CP',
+              type: 'STR',
+              icon: ray,
+              title: 'RELENTLESS ASSAULT',
+            }
+          ],
+          tags: ['TYRANIDS', 'HIVE FLEETS OF THE TYRANIDS'],
+          faction: 'Tyranids',
+          iconCompany: tyranids,
+          name: 'Termagants',
+          status: {
+              m: '5"',
+              t: '5',
+              sv: '2+',
+              w: '3',
+              ld: '2+',
+              oc: '1'
+          },
+          statusPosition: '+4',
+      },
+      {   
+        subtitle: 'Termagants',
+        description: 'Os Tirânides são uma das raças alienígenas mais temidas do universo. Eles são uma forma de vida biológica coletiva, controlada por uma consciência superior conhecida como a Mente da Colmeia. próprias células.',
+        author: 'Rufus',
+        FrontBox: TYFront,
+        LeftBox: TYLeft,
+        RightBox: TYRight,
+        image: [
+            TYImagem1,
+            TYImagem2,
+            TYImagem3,
+            TYImagem4,
+            TYImagem5,
+            TYImagem6,
+            TYImagem7,
+            TYImagem8,
+            TYImagem9,
+            TYImagem10,
+            TYImagem11,
+            TYImagem12,
+            TYImagem13,
+            TYImagem14,
+            TYImagem15,
+            TYImagem16,
+            TYImagem17,
+            TYImagem18,
+            TYImagem19,
+            TYImagem20,
+        ],
+        AvailableActions: 
+        [
+          {
+            cp: '1CP',
+            type: 'STR',
+            icon: ray,
+            title: 'RELENTLESS ASSAULT',
+          }
+        ],
+        tags: ['TYRANIDS', 'HIVE FLEETS OF THE TYRANIDS'],
+        faction: 'Tyranids',
+        iconCompany: tyranids,
+        name: 'Termagants',
+        status: {
+            m: '5"',
+            t: '5',
+            sv: '2+',
+            w: '3',
+            ld: '2+',
+            oc: '1'
+        },
+        statusPosition: '+4',
+    },
+    {   
+      subtitle: 'Termagants',
+      description: 'Os Tirânides são uma das raças alienígenas mais temidas do universo. Eles são uma forma de vida biológica coletiva, controlada por uma consciência superior conhecida como a Mente da Colmeia. próprias células.',
+      author: 'Rufus',
+      FrontBox: TYFront,
+      LeftBox: TYLeft,
+      RightBox: TYRight,
+      image: [
+          TYImagem1,
+          TYImagem2,
+          TYImagem3,
+          TYImagem4,
+          TYImagem5,
+          TYImagem6,
+          TYImagem7,
+          TYImagem8,
+          TYImagem9,
+          TYImagem10,
+          TYImagem11,
+          TYImagem12,
+          TYImagem13,
+          TYImagem14,
+          TYImagem15,
+          TYImagem16,
+          TYImagem17,
+          TYImagem18,
+          TYImagem19,
+          TYImagem20,
+      ],
+      AvailableActions: 
+      [
+        {
+          cp: '1CP',
+          type: 'STR',
+          icon: ray,
+          title: 'RELENTLESS ASSAULT',
+        }
+      ],
+      tags: ['TYRANIDS', 'HIVE FLEETS OF THE TYRANIDS'],
+      faction: 'Tyranids',
+      iconCompany: tyranids,
+      name: 'Termagants',
+      status: {
+          m: '5"',
+          t: '5',
+          sv: '2+',
+          w: '3',
+          ld: '2+',
+          oc: '1'
+      },
+      statusPosition: '+4',
+  },
     ]
 }

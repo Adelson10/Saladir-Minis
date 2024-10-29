@@ -102,8 +102,9 @@ const ModalBox = ( {product, index, type} : {product: PropsModalBox, index: numb
     };
     
     return (
-        <div
-            className="modal-box-container"
+        <div className='modal-box-container'>
+            <div
+            className="modal-box"
             ref={BoxContainer}
             onTouchStart={handleStart}
             onTouchMove={handleMove}
@@ -169,6 +170,7 @@ const ModalBox = ( {product, index, type} : {product: PropsModalBox, index: numb
             { (!mobile && !activeImage3d) &&
                 <button className='modal-box-container-button right' onClick={handleRight}><CaretRight size={'1.2rem'} weight="fill" /></button>
             }
+            </div>
         </div>
     );
 };

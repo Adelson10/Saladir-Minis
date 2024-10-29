@@ -2,7 +2,7 @@ import LogoStormBringers from '../../assets/icons/LogoStormBringers';
 import LogoWolfDescription from '../../assets/icons/LogoWolfDescription';
 import Faccao from '../Faccao/Faccao';
 import Header from '../Header/Header';
-import {StromBringers, Tyranids} from '../Mockup/FaccoesMockup';
+import {StromBringers, Tyranids} from '../mockup/FaccoesMockup';
 import Sociais from '../utils/Sociais';
 import './Home.css';
 
@@ -44,7 +44,7 @@ const Home = () => {
             </div>
           </div>
           <Faccao faction={StromBringers} type='good'/>
-          <Faccao faction={Tyranids} type='bad'/>
+          <Faccao faction={Tyranids} type='bad' reverse={true}/>
       </div>
       
     </>

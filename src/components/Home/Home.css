@@ -213,9 +213,14 @@
 }
 
 @media (max-width: 1000px) {
+    .faccao-container {
+        gap: 0;
+    }
+
     .container-description-container {
         width: 90%;
-        padding: 2rem 1rem;
+        padding: 1rem;
+        gap: 2rem;
     }
 
     .anuncio-title-container h1{
@@ -250,5 +255,11 @@
     .anuncio-title-container h2 {
         line-height: 1.2rem;
         letter-spacing: 3px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container-description-border {
+        grid-template-columns: 36% 28% 36%;
     }
 }
