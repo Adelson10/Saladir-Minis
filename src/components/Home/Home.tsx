@@ -2,7 +2,7 @@ import LogoStormBringers from '../../assets/icons/LogoStormBringers';
 import LogoWolfDescription from '../../assets/icons/LogoWolfDescription';
 import Faccao from '../Faccao/Faccao';
 import Header from '../Header/Header';
-import {StromBringers, Tyranids} from '../mockup/FaccoesMockup';
+import { StromBringers, Tyranids } from '../Mockup/FaccoesMockup';
 import Sociais from '../utils/Sociais';
 import './Home.css';
 

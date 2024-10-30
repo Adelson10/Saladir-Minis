@@ -16,32 +16,37 @@ const ModalImage3d = ({ style, images }: { style: string; images: string[] }) =>
     sideNow: 0,
   });
   const boxContainerRef = useRef<HTMLDivElement>(null);
+  const [imageLoad, setImageLoad] = React.useState(0);
 
   function handleStart(event: React.TouchEvent | React.MouseEvent) {
-    const startX =
-      'touches' in event
-        ? event.changedTouches[0].clientX
-        : (event as React.MouseEvent).clientX;
-    setDist((prevDist) => ({ ...prevDist, startX }));
+    if(images.length === imageLoad) {
+      const startX =
+        'touches' in event
+          ? event.changedTouches[0].clientX
+          : (event as React.MouseEvent).clientX;
+      setDist((prevDist) => ({ ...prevDist, startX }));
 
-    if (!(event as React.TouchEvent).touches) {
-      document.addEventListener('mousemove', handleMove);
-      document.addEventListener('mouseup', handleEnd);
+      if (!(event as React.TouchEvent).touches) {
+        document.addEventListener('mousemove', handleMove);
+        document.addEventListener('mouseup', handleEnd);
+      }
     }
   }
 
   function handleMove(event: TouchEvent | MouseEvent) {
-    const box = boxContainerRef.current?.getBoundingClientRect();
-    const pointerPosition =
-      'touches' in event
-        ? event.changedTouches[0].clientX
-        : (event as MouseEvent).clientX;
+    if(images.length === imageLoad) {
+      const box = boxContainerRef.current?.getBoundingClientRect();
+      const pointerPosition =
+        'touches' in event
+          ? event.changedTouches[0].clientX
+          : (event as MouseEvent).clientX;
 
-    if (box && (pointerPosition < box.left || pointerPosition > box.right)) return;
+      if (box && (pointerPosition < box.left || pointerPosition > box.right)) return;
 
-    const finalPosition = updatePosition(pointerPosition);
-    if (finalPosition !== undefined) {
-      moveImage(Math.round(finalPosition));
+      const finalPosition = updatePosition(pointerPosition);
+      if (finalPosition !== undefined) {
+        moveImage(Math.round(finalPosition));
+      }
     }
   }
 
@@ -60,10 +65,12 @@ const ModalImage3d = ({ style, images }: { style: string; images: string[] }) =>
   }
 
   function handleEnd() {
-    document.removeEventListener('mousemove', handleMove);
-    document.removeEventListener('mouseup', handleEnd);
-    setDist((prevDist) => ({ ...prevDist, finalPosition: prevDist.movePosition ?? 0 }));
-  }
+    if(images.length === imageLoad) {
+      document.removeEventListener('mousemove', handleMove);
+      document.removeEventListener('mouseup', handleEnd);
+      setDist((prevDist) => ({ ...prevDist, finalPosition: prevDist.movePosition ?? 0 }));
+    }
+  }  
 
   useEffect(() => {
     return () => {
@@ -72,18 +79,28 @@ const ModalImage3d = ({ style, images }: { style: string; images: string[] }) =>
     };
   }, []);
 
+  useEffect(() => {
+    setImageLoad(0);
+  }, [images]);
+
+  function handleImageLoad() {
+    setImageLoad(imageLoad => imageLoad + 1);
+  }
+
   return (
     <div ref={boxContainerRef} className="box-face-image-char-container">
+      {imageLoad !== imageLoad && <p>Carregando...</p>}
       {images.map((image, index) => (
         <img
           key={index}
           src={image}
-          style={{ display: dist.sideNow === index ? 'block' : 'none' }}
+          style={{ display: dist.sideNow === index && imageLoad === images.length ? 'block' : 'none' }}
           className={style}
           onTouchStart={handleStart}
           onTouchMove={(e) => handleMove(e.nativeEvent as TouchEvent)}
           onTouchEnd={handleEnd}
           onMouseDown={handleStart}
+          onLoad={handleImageLoad}
         />
       ))}
     </div>

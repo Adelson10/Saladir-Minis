@@ -11,7 +11,7 @@ const Faccao = ({ faction, type, reverse = false }: { faction: FactionProps, typ
 
   return (
     <div className={`faccao-container ${reverse ? 'reverse' : ''}`}>
-      <ModalBox product={faction.products[index]} index={index} type={type} />
+      <ModalBox product={faction.products[index]} type={type} />
       <div className="faccao-text-container">
         <div className="faccao-text-descriptions-container">
           <h1 className='home-title'>{faction.title}</h1>

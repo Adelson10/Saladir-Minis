@@ -13,7 +13,7 @@ import './ModalBox.css';
 import useMedia from '../../Hooks/useMedia';
 import ModalImage3d from './ModalImage3d';
 
-const ModalBox = ( {product, index, type} : {product: PropsModalBox, index: number, type: string}) => {
+const ModalBox = ( {product, type} : {product: PropsModalBox, type: string}) => {
     const Box = useRef<HTMLDivElement>(null);
     const BoxContainer = useRef<HTMLDivElement>(null);
     const [activeImage3d, setActiveImage3d] = useState(false);
