@@ -13,7 +13,7 @@ const Header = () => {
                 <li><LogoAliens />Facções</li>
             </ul>
             <div className="header-logo-storie">
-                <LogoLoja />
+                <LogoLoja width={'55'} height={'60'}/>
             </div>
             <ul>
                 <li><QuestionMark /> Como Jogar</li>

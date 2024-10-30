@@ -14,15 +14,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --font-primary: "Inika", serif;
-  --font-secundary: 'Enchanted Land', sans-serif;
+  --font-one: "Inika", serif;
+  --font-two: 'Enchanted Land', sans-serif;
   --font-three: "Inter", sans-serif;
   --color-bg: #000D0F;
-  --color-primary: #ffffff;
-  --color-secundary: #00EEFF;
+  --color-one: #ffffff;
+  --color-two: #00EEFF;
   --color-three: #FF7700;
-  --degrade-primary: linear-gradient(#000d0f00, #000D0F);
-  --degrade-secundary: radial-gradient(#000d0f00, #000D0F);
+  --color-three-dark: #ac5000;
+  --degrade-one: linear-gradient(#000d0f00, #000D0F);
+  --degrade-two: radial-gradient(#000d0f00, #000D0F);
 }
 
 body {

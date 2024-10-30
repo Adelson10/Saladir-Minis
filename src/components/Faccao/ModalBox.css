@@ -117,7 +117,7 @@
 }
 
 .box-face-char-title h4 {
-  color: var(--color-secundary);
+  color: var(--color-two);
   line-height: 0.7rem;
   font-size: 0.7rem;
   margin: 0;
@@ -127,7 +127,7 @@
 }
 
 .box-face-char-title h3 {
-  color: var(--color-primary);
+  color: var(--color-one);
   line-height: 1.2rem;
   font-size: 1.5rem;
   margin: 0;
@@ -167,8 +167,8 @@
 .box-face-status-tags h5 {
   padding: 0.1rem 0.2rem;
   border-radius: 0.2rem;
-  border: 2px solid var(--color-secundary);
-  color: var(--color-primary);
+  border: 2px solid var(--color-two);
+  color: var(--color-one);
   background: none;
   font-size: 0.5rem;
   font-weight: 300;
@@ -204,7 +204,7 @@
   right: 0;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .modal-box-container {
     width: 100%;
   }

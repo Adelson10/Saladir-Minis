@@ -79,14 +79,14 @@
 
 .faccao-product-text-container {
     text-align: start;
-    background-image: var(--degrade-primary);
+    background-image: var(--degrade-one);
     padding: .5rem 0;
     width: 100%;
     display: block;
 }
 
 .faccao-product-text-container h2 {
-    color: var(--color-secundary);
+    color: var(--color-two);
     line-height: .6rem;
     margin: 0;
     font-weight: 400;
@@ -95,7 +95,7 @@
 }
 
 .faccao-product-text-container h3 {
-    color: var(--color-primary);
+    color: var(--color-one);
     line-height: .95rem;
     font-size: .95rem;
     margin: 0;
@@ -143,6 +143,10 @@
     gap: 1rem;
   }
 
+  .swiper-pagination > .swiper-pagination-bullet {
+    background: var(--color-three) !important;
+  }
+
 @media (max-width: 1040px) {
     .faccao-container {
         width: 100%;
@@ -162,6 +166,14 @@
     }
 
     .faccao-products-list {
+        order: 0;
+    }
+
+    .faccao-text-descriptions-container {
+        order: 1;
+    }
+
+    .faccao-container.reverse > .modal-box-container {
         order: 0;
     }
 }

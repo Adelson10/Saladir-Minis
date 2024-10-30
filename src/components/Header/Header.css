@@ -12,7 +12,7 @@ nav {
     grid-template-columns: 45% 10% 45%;
     background: hsla(188, 100%, 3%, 0.5);
     padding: .5rem 1rem;
-    font-family: var(--font-primary);
+    font-family: var(--font-one);
     font-weight: bold;
     margin: 0 auto;
 }

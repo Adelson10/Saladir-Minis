@@ -1,9 +1,9 @@
-function LogoLoja() {
+function LogoLoja({width = '45', height='50'}: {width: string, height: string}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="45"
-      height="50"
+      width={width}
+      height={height}
       fill="none"
       viewBox="0 0 45 50"
     >
