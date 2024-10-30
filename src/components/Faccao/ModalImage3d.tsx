@@ -89,7 +89,7 @@ const ModalImage3d = ({ style, images }: { style: string; images: string[] }) =>
 
   return (
     <div ref={boxContainerRef} className="box-face-image-char-container">
-      {imageLoad !== imageLoad && <p>Carregando...</p>}
+      {imageLoad !== images.length && <p>Carregando...</p>}
       {images.map((image, index) => (
         <img
           key={index}
