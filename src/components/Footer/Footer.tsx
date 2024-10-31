@@ -1,4 +1,3 @@
-import React from 'react'
 import './Footer.css';
 import { DiscordLogo, InstagramLogo, XLogo } from '@phosphor-icons/react';
 
