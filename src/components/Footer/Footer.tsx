@@ -1,12 +1,12 @@
 import React from 'react'
-import LogoLoja from '../../assets/icons/LogoLoja';
 import './Footer.css';
+import { DiscordLogo, InstagramLogo, XLogo } from '@phosphor-icons/react';
 
 const Footer = () => {
   return (
     <footer>
-        <div className="footer-container">
-            <LogoLoja height='100' width='88'/>
+        <div className="footer-container-logo-container">
+            <div className="footer-container-logo"></div>
         </div>
         <div className="footer-container">
             <h3>Informações de Contato</h3>
@@ -26,8 +26,15 @@ const Footer = () => {
             </ul>
         </div>
         <div className="footer-container">
-            <h3>Informações de Contato</h3>
             <p>Se os Storm Bringers já dominam a arte de equilibrar ferocidade com estratégia, qual você acha que é o próximo desafio para eles?</p>
+        </div>
+        <div className="footer-container-descriptions">
+            <p>© 2024 Saladir Minis, inc.</p>
+            <div className="footer-container-sociais">
+                <DiscordLogo size={'2rem'} weight='fill'/>
+                <XLogo size={'2rem'} />
+                <InstagramLogo size={'2rem'} />
+            </div>
         </div>
     </footer>
   )

@@ -4,7 +4,6 @@ header {
 }
 
 nav {
-    width: 840px;
     border-radius: 3rem;
     border: 1px solid hsl(0, 0%, 20%);
 
@@ -35,6 +34,16 @@ nav ul > li:hover > svg {
 
 .header-logo-storie {
     margin: 0 auto;
+}
+
+.logo-loja {
+    height: 3.5rem;
+    width: 3.5rem;
+    display: block;
+    background-image: url('../../assets/icons/logo-loja.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 @media (max-width: 1000px) {

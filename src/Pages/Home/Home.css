@@ -214,6 +214,14 @@
 }
 
 @media (max-width: 1000px) {
+    .container-description-text {
+        transform: translateY(-320px);
+    }
+
+    .container-description-text h1 {
+        font-size: 1.3rem;
+    }
+    
     .faccao-container {
         gap: 0;
     }
@@ -236,6 +244,7 @@
 }
 
 @media (max-width: 600px) {
+
     .anuncio-container {
         width: 80%;
         margin: 0 auto;
