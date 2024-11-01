@@ -26,6 +26,10 @@
   --degrade-two: radial-gradient(#000d0f00, #000D0F);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;

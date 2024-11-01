@@ -72,6 +72,10 @@
     opacity: .4;
 } 
 
+#Faccao {
+    padding: 2rem 0;
+}
+
 .anuncio-title-container h2 {
     margin: 0;
     font-size: 1.8rem;
