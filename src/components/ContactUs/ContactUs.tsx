@@ -2,7 +2,7 @@ import './ContactUs.css';
 
 const ContactUs = () => {
   return (
-    <div className='contact-us-container'>
+    <div className='contact-us-container' id='FaleConosco'>
         <div className="contact-us-text">
             <h1>Contato</h1>
             <p>Na escuridão do futuro, a determinação é a luz que nos guia.</p>

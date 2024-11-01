@@ -2,7 +2,7 @@ import './LearnToPlay.css';
 
 const LearnToPlay = () => {
   return (
-    <div className='learn-to-play-container'>
+    <div className='learn-to-play-container' id='ComoJogar'>
         <h1 className='home-title'>Aprenda a Jogar</h1>
         <h2>Tutoriais em vídeos, cursos de pintura para iniciantes e aprenda toda a atomesfera para iniciar nesse universo.</h2>
         <div className="learn-to-play-video-container">

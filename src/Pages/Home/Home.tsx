@@ -28,7 +28,7 @@ const Home = () => {
           </div>
           <Sociais />
       </div>
-      <div className="container-description-container">
+      <div className="container-description-container" id='Universo'>
         <div className="container-description-bg">
           <LogoStormBringers />
         </div>
@@ -46,8 +46,10 @@ const Home = () => {
               <div className="container-description-border-sides"></div>
             </div>
           </div>
-          <Faccao faction={StromBringers} type='good'/>
-          <Faccao faction={Tyranids} type='bad' reverse={true}/>
+          <div id='Faccao'>
+            <Faccao faction={StromBringers} type='good'/>
+            <Faccao faction={Tyranids} type='bad' reverse={true}/>
+          </div>
           <LearnToPlay />
       </div>
       <ContactUs />

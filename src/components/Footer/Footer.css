@@ -39,7 +39,8 @@ footer {
     padding-left: 1rem;
 }
 
-.footer-container-sociais:hover > svg{
+.footer-container-sociais > svg:hover {
+    cursor: pointer;
     color: var(--color-three);
 }
 
