@@ -1,0 +1,24 @@
+.AnimationLobo path {
+    fill: transparent;
+    stroke: white;
+    stroke-width: 3;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1560;
+    animation: LoboAnimation 3s ease-in forwards;
+}
+
+@keyframes LoboAnimation {
+    0% {
+        stroke-dashoffset: 1560;
+    }
+    80% {
+        fill: transparent;
+        stroke-width: 3;
+    }
+    100% {
+        stroke-dashoffset: 800;
+        stroke-width: 0;
+        fill: white;
+    }
+}
+

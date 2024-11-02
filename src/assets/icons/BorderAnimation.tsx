@@ -1,231 +1,40 @@
-import * as React from "react";
+import { motion } from "framer-motion";
 
 const BorderAnimation = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1627"
-    height="87"
-    fill="none"
-    viewBox="0 0 1627 87"
-  >
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M29.024 2.79 2 29.824l27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M29.045 29.829 2.02 56.861l27.024 27.032 27.024-27.032zM96.54 16.315 69.517 43.347 96.54 70.38l27.025-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M69.528 16.328 42.504 43.36l27.024 27.032L96.552 43.36zM137.303 2.796l-27.024 27.032 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m137.323 29.834-27.024 27.032 27.024 27.032 27.025-27.032zM204.807 16.308 177.782 43.34l27.025 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M177.776 16.328 150.752 43.36l27.024 27.032L204.8 43.36zM245.564 2.801 218.54 29.833l27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M245.584 29.84 218.56 56.872l27.024 27.032 27.025-27.032zM313.055 16.308 286.031 43.34l27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M286.025 16.328 259 43.36l27.025 27.033 27.024-27.033zM353.807 2.814l-27.024 27.032 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m353.833 29.84-27.024 27.032 27.024 27.032 27.024-27.032zM421.303 16.308 394.279 43.34l27.024 27.032 27.025-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m394.291 16.303-27.024 27.032 27.024 27.032 27.024-27.032zM462.086 2.801l-27.024 27.033 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m462.068 29.827-27.024 27.032 27.024 27.032 27.025-27.032zM529.59 16.313l-27.025 27.032 27.025 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m502.539 16.303-27.024 27.032 27.024 27.032 27.024-27.032zM570.334 2.801 543.31 29.834l27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m570.329 29.84-27.024 27.032 27.024 27.032 27.025-27.032zM637.838 16.313l-27.024 27.032 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m610.782 16.316-27.024 27.032 27.024 27.032 27.024-27.032zM678.595 2.807l-27.024 27.032 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m678.59 29.845-27.024 27.032L678.59 83.91l27.024-27.032zM746.086 16.313l-27.024 27.032 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m719.048 16.308-27.024 27.033 27.024 27.032 27.025-27.032zM786.818 2.789 759.794 29.82l27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m786.826 29.815-27.024 27.032 27.024 27.032 27.024-27.032zM29.515 2.78H820.39M29.515 85.43H820.39M840.618 2.025l-27.024 27.032 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M840.626 29.058 813.602 56.09l27.024 27.032L867.65 56.09zM908.109 15.532l-27.024 27.032 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m881.066 15.54-27.024 27.032 27.024 27.032 27.024-27.032zM948.897 2.012l-27.024 27.033 27.024 27.032 27.024-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m948.887 29.064-27.025 27.032 27.025 27.032 27.024-27.032zM1016.37 15.562l-27.024 27.032 27.024 27.032 27.02-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M989.314 15.54 962.29 42.572l27.024 27.032 27.026-27.032zM1057.14 2.013l-27.02 27.032 27.03 27.032 27.02-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1057.13 29.064-27.02 27.032 27.03 27.032 27.02-27.032zM1124.62 15.562l-27.03 27.033 27.03 27.032 27.02-27.033z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1097.59 15.54-27.03 27.032 27.03 27.032 27.02-27.032zM1165.38 2l-27.02 27.032 27.02 27.032 27.02-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1165.38 29.064-27.02 27.032 27.02 27.032 27.03-27.032zM1232.87 15.537l-27.03 27.032 27.03 27.032 27.02-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1205.84 15.54-27.03 27.032 27.03 27.032 27.02-27.032zM1273.62 2.03l-27.02 27.033 27.02 27.032 27.03-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1273.63 29.064-27.02 27.032 27.02 27.032 27.03-27.032zM1341.11 15.537l-27.02 27.032 27.02 27.032 27.03-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1314.11 15.545-27.02 27.032 27.02 27.032 27.03-27.032zM1381.9 2.018l-27.02 27.032 27.02 27.032 27.03-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1381.91 29.082-27.03 27.032 27.03 27.032 27.02-27.032zM1449.36 15.537l-27.02 27.032 27.02 27.032 27.03-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1422.35 15.533-27.02 27.032 27.02 27.032 27.02-27.032zM1490.14 2.03l-27.03 27.033 27.03 27.032 27.02-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1490.13 29.064-27.03 27.032 27.03 27.032 27.02-27.032zM1557.62 15.55l-27.02 27.032 27.02 27.032 27.03-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="m1530.6 15.533-27.03 27.032 27.03 27.032 27.02-27.032zM1598.4 2.018l-27.02 27.032 27.02 27.032 27.02-27.032z"
-    ></path>
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="3"
-      d="M1598.41 29.07 1571.38 56.1l27.03 27.032 27.02-27.032zM807.078 2.01h790.872M807.078 84.66h790.872"
-    ></path>
-  </svg>
+<svg width="816" height="87" viewBox="0 0 816 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M29.0242 2.7904L2 29.8225L29.0242 56.8546L56.0483 29.8225L29.0242 2.7904Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M29.0447 29.8287L2.02051 56.8608L29.0447 83.8929L56.0688 56.8608L29.0447 29.8287Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M96.5405 16.3148L69.5164 43.3469L96.5405 70.379L123.565 43.3469L96.5405 16.3148Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M69.5278 16.3279L42.5037 43.36L69.5278 70.3921L96.552 43.36L69.5278 16.3279Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M137.303 2.79565L110.279 29.8278L137.303 56.8599L164.327 29.8278L137.303 2.79565Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M137.323 29.8341L110.299 56.8662L137.323 83.8983L164.348 56.8662L137.323 29.8341Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M204.807 16.3075L177.782 43.3396L204.807 70.3717L231.831 43.3396L204.807 16.3075Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M177.776 16.328L150.752 43.3601L177.776 70.3922L204.8 43.3601L177.776 16.328Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M245.564 2.80102L218.54 29.8331L245.564 56.8652L272.588 29.8331L245.564 2.80102Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M245.584 29.8393L218.56 56.8715L245.584 83.9036L272.609 56.8715L245.584 29.8393Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M313.055 16.3076L286.031 43.3397L313.055 70.3718L340.079 43.3397L313.055 16.3076Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M286.025 16.328L259 43.3601L286.025 70.3922L313.049 43.3601L286.025 16.328Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M353.807 2.81372L326.783 29.8458L353.807 56.8779L380.831 29.8458L353.807 2.81372Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M353.833 29.8395L326.809 56.8716L353.833 83.9037L380.857 56.8716L353.833 29.8395Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M421.303 16.3076L394.279 43.3397L421.303 70.3718L448.328 43.3397L421.303 16.3076Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M394.291 16.3029L367.267 43.335L394.291 70.3671L421.315 43.335L394.291 16.3029Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M462.086 2.80115L435.062 29.8333L462.086 56.8654L489.11 29.8333L462.086 2.80115Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M462.068 29.8269L435.044 56.859L462.068 83.8911L489.093 56.859L462.068 29.8269Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M529.59 16.313L502.565 43.3451L529.59 70.3772L556.614 43.3451L529.59 16.313Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M502.539 16.3029L475.515 43.335L502.539 70.3671L529.563 43.335L502.539 16.3029Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M570.334 2.80127L543.31 29.8334L570.334 56.8655L597.358 29.8334L570.334 2.80127Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M570.329 29.8396L543.305 56.8717L570.329 83.9038L597.354 56.8717L570.329 29.8396Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M637.838 16.313L610.814 43.3451L637.838 70.3772L664.862 43.3451L637.838 16.313Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M610.782 16.3157L583.758 43.3478L610.782 70.3799L637.806 43.3478L610.782 16.3157Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M678.595 2.80654L651.571 29.8386L678.595 56.8707L705.619 29.8386L678.595 2.80654Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M678.59 29.845L651.566 56.8771L678.59 83.9092L705.614 56.8771L678.59 29.845Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M746.086 16.3131L719.062 43.3452L746.086 70.3773L773.11 43.3452L746.086 16.3131Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M719.048 16.3082L692.024 43.3403L719.048 70.3724L746.073 43.3403L719.048 16.3082Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M786.818 2.78868L759.794 29.8208L786.818 56.8529L813.842 29.8208L786.818 2.78868Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 3, ease: 'easeIn', delay: 0.5}} d="M786.826 29.8145L759.802 56.8466L786.826 83.8787L813.85 56.8466L786.826 29.8145Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 2, ease: 'easeInOut'}} d="M29.5149 2.7793L787 2.00903" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <motion.path initial={{ strokeDashoffset: 0, strokeDasharray: 1560 , opacity: 0 }} animate={{opacity: 1, strokeDashoffset: [1560, 800]}} transition={{duration: 2, ease: 'easeInOut'}} d="M29.5149 85.4302L787 84.9993" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
 );
 
 export default BorderAnimation;

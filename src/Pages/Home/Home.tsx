@@ -14,6 +14,7 @@ const Home = () => {
   return (
     <>
       <div className="home-container">
+          <div className="rain"></div>
           <Header />
           <div className="anuncio-container">
               <div className="anuncio-title-container">
@@ -46,7 +47,7 @@ const Home = () => {
               <div className="container-description-border-logo">
                 <LogoWolfDescription />
               </div>
-              <div className="container-description-border-sides">
+              <div className="container-description-border-sides reverse">
                 <BorderAnimation />
               </div>
             </div>
