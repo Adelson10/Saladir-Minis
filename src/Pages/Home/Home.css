@@ -1,5 +1,5 @@
 .home-container {
-    width: 100%;
+    width: 100vw;
     height: calc(100vh + 100px);
     background-image: var(--degrade-one),
     var(--degrade-two),
@@ -11,16 +11,19 @@
     display: grid;
     grid-template-rows: 11% 72% 15%;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .rain {
     display: block;
     position: absolute;
-    width: 100%;
+    width: 2560px;
     height: 110%;
     background-image: 
     var(--degrade-one),
     url('../../assets/utils/rain.png');
+    background-size: auto;
     animation: rain .6s linear infinite;
     z-index: 0;
 }
@@ -312,6 +315,10 @@
     .anuncio-title-container h2 {
         font-size: 1.2rem;
         line-height: 1rem;
+    }
+
+    .rain {
+        animation: rain .3s linear infinite;
     }
 }
 

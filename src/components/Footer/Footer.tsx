@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import { DiscordLogo, InstagramLogo, XLogo } from '@phosphor-icons/react';
 
@@ -17,11 +18,8 @@ const Footer = () => {
         <div className="footer-container">
             <h3>Sobre nós</h3>
             <ul>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Categorias de Produtos</a></li>
-                <li><a href="">Política de Frete e Entrega</a></li>
-                <li><a href="">Política de Devolução</a></li>
-                <li><a href="">Termos de Uso e Política de Privacidade</a></li>
+                <li><Link to={'/FAQ'}>FAQ</Link></li>
+                <li><Link to={'/Termos'}>Termos de Uso e Política de Privacidade</Link></li>
             </ul>
         </div>
         <div className="footer-container">
