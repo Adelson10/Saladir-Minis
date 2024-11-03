@@ -196,7 +196,7 @@
   height: 15px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   border-radius: 1rem;
   background: var(--color-one);
   overflow: hidden;
@@ -206,6 +206,7 @@
   height: 100%;
   display: block;
   background: var(--color-two);
+  width: 100%;
 }
 
 .modal-box-container-button {
