@@ -113,12 +113,12 @@
 }
 
 .good{
-    background-image: linear-gradient(#000d0f8e, #000d0fb4), url('../../assets/bg/moda-storm.png');
+    background-image: linear-gradient(#000d0f8e, #000d0fb4), url('../../assets/bg/moda-storm.webp');
     background-size: cover;
   }
   
   .bad{
-    background-image: linear-gradient(#000d0f8e, #000d0fb4), url('../../assets/bg/modal-tyra.png');
+    background-image: linear-gradient(#000d0f8e, #000d0fb4), url('../../assets/bg/modal-tyra.webp');
     background-size: cover;
   }
 

@@ -3,7 +3,7 @@
     height: calc(100vh + 100px);
     background-image: var(--degrade-one),
     var(--degrade-two),
-    url('../../assets/bg/bg-home.png');
+    url('../../assets/bg/bg-home.webp');
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@
     height: 110%;
     background-image: 
     var(--degrade-one),
-    url('../../assets/utils/rain.png');
+    url('../../assets/utils/rain.webp');
     background-size: auto;
     animation: rain .6s linear infinite;
     z-index: 0;
@@ -117,7 +117,7 @@
 .anuncio-title-container h1::after {
     content: 'Lançamento em Janeiro de 2025';
 
-    background: url('../../assets/utils/dist.png');
+    background: url('../../assets/utils/dist.webp');
     background-clip: text;
     color: white;
     -webkit-text-fill-color: transparent;
@@ -210,7 +210,7 @@
     position: relative;
     display: block;
     background: linear-gradient(#000d0f00 0%, #000D0F 70%),
-    url('../../assets/bg/bg-description.png');
+    url('../../assets/bg/bg-description.webp');
     background-size: cover;
     width: 100%;
     height: 500px;

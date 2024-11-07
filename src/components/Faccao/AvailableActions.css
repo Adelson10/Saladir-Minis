@@ -4,7 +4,7 @@
     display: flex;
     padding: .5rem;
     box-sizing: content-box;
-    background-image: url('../../assets/bg/background-available.png');
+    background-image: url('../../assets/bg/background-available.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -31,7 +31,7 @@
 .available-actions-status-icon {
     width: 40px;
     height: 40px;
-    background: url('../../assets/bg/bg-icons-available.png');
+    background: url('../../assets/bg/bg-icons-available.webp');
     background-position: center;
     background-size: cover;
     margin: 0 auto;

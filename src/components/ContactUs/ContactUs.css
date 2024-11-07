@@ -13,7 +13,7 @@
 
 .contact-us-text {
     background-image: linear-gradient(to left, #002429, #00242900),
-    url('../../assets/bg/image-footer.png');
+    url('../../assets/bg/image-footer.webp');
     background-size: cover;
     height: 370px;
     display: flex;
@@ -132,7 +132,7 @@
 
     .contact-us-text {
         background-image: linear-gradient(to top, #002429, #00242900),
-        url(/src/assets/bg/image-footer.png);
+        url(/src/assets/bg/image-footer.webp);
         background-position: center center;
         outline: none;
         height: 100%;
